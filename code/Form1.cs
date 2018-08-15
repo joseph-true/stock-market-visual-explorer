@@ -1,25 +1,47 @@
 // -------------------------------------------------
-//Author:				Joseph True
-//Date:					12/17/2008
+// Stock Market Visual Explorer
 //
-//Project ID:			Stock chart using candlestick and other type glyphs.
-//						Chapter 7
+// License:
+// Copyright (c) 2008-2018 Joseph True
 //
-//CS Class:				CS 525D Fall 2008
-//Programming Language:	C#
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 //
-//Overall Design:		Plot stock prices using four different types of glyphs.
-//						1. High Low
-//						2. Open High Low Close
-//						3. Candlestick
-//						4. One that I made up
+// -------------------------------------------------
+// Author:            Joseph True
+// Email:             jtrueprojects@gmail.com
+// Original Date:     12/17/2008
+// Updated:           Aug, 2018
+// History:           Originally created as final project for CS 525D Fall, 2008
+// Project Desc:      Interactive data visualization of the 2007-2008 Financial Crisis.
+//                    Featuring stock charts using candlestick and other type glyphs.
+//                    Word clouds of Federal Reserve speeches from 2007-2008 timeframe.   
+// Language:	      C#
+// Overall Design:    Plot stock prices using four different types of glyphs.
+//					  1. High Low
+//					  2. Open High Low Close
+//					  3. Candlestick
+//					  4. One that I made up
 //
-//						Data soucre was Yahoo Finance
-//						DOW http://finance.yahoo.com/echarts?s=%5EDJI#chart9:symbol=^dji;range=1m;indicator=volume;charttype=candlestick;crosshair=on;ohlcvalues=0;logscale=on;source=undefined
+//					  Data soucre was Yahoo Finance
+//					  DOW http://finance.yahoo.com/echarts?s=%5EDJI#chart9:symbol=^dji;range=1m;indicator=volume;charttype=candlestick;crosshair=on;ohlcvalues=0;logscale=on;source=undefined
 //
-//Interfaces:			
-//
-//Additional Files:		Stock data in CSV text files
+//Additional Files:   Stock data in CSV text files
 //
 // -------------------------------------------------
 //
@@ -206,527 +228,565 @@ namespace WindowsApplication2
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.cboStockName = new System.Windows.Forms.ComboBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.picLegendCandlestick = new System.Windows.Forms.PictureBox();
-			this.picLegendOHLC = new System.Windows.Forms.PictureBox();
-			this.picLegendHighLow = new System.Windows.Forms.PictureBox();
-			this.picLegendLine = new System.Windows.Forms.PictureBox();
-			this.rdbMyGlyph = new System.Windows.Forms.RadioButton();
-			this.rdbCandlestick = new System.Windows.Forms.RadioButton();
-			this.rdbOHLC = new System.Windows.Forms.RadioButton();
-			this.rdbHighLow = new System.Windows.Forms.RadioButton();
-			this.rdoLine = new System.Windows.Forms.RadioButton();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.pictureBox2 = new System.Windows.Forms.PictureBox();
-			this.pictureBox3 = new System.Windows.Forms.PictureBox();
-			this.pictureBox4 = new System.Windows.Forms.PictureBox();
-			this.pictureBox5 = new System.Windows.Forms.PictureBox();
-			this.pictureBox6 = new System.Windows.Forms.PictureBox();
-			this.pictureBox7 = new System.Windows.Forms.PictureBox();
-			this.pictureBox8 = new System.Windows.Forms.PictureBox();
-			this.pictureBox9 = new System.Windows.Forms.PictureBox();
-			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-			this.picSpeech1 = new System.Windows.Forms.PictureBox();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-			this.checkBox1 = new System.Windows.Forms.CheckBox();
-			this.chkShowNewsEvents = new System.Windows.Forms.CheckBox();
-			this.lblSpeechDate1 = new System.Windows.Forms.Label();
-			this.lblSpeechDate2 = new System.Windows.Forms.Label();
-			this.lblSpeechDate3 = new System.Windows.Forms.Label();
-			this.lblSpeechDate4 = new System.Windows.Forms.Label();
-			this.lblSpeechDate5 = new System.Windows.Forms.Label();
-			this.lblSpeechDate6 = new System.Windows.Forms.Label();
-			this.lblSpeechDate7 = new System.Windows.Forms.Label();
-			this.lblSpeechDate8 = new System.Windows.Forms.Label();
-			this.lblSpeechDate9 = new System.Windows.Forms.Label();
-			this.chkShowMinMax = new System.Windows.Forms.CheckBox();
-			this.groupBox5 = new System.Windows.Forms.GroupBox();
-			this.checkBox3 = new System.Windows.Forms.CheckBox();
-			this.picEventBearStearns = new System.Windows.Forms.PictureBox();
-			this.grpSpeech = new System.Windows.Forms.GroupBox();
-			this.picSpeech2 = new System.Windows.Forms.PictureBox();
-			this.picEventFannieFreddie = new System.Windows.Forms.PictureBox();
-			this.picEventLehmanBros = new System.Windows.Forms.PictureBox();
-			this.picEventAIG = new System.Windows.Forms.PictureBox();
-			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
-			this.groupBox5.SuspendLayout();
-			this.grpSpeech.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.cboStockName);
-			this.groupBox1.Location = new System.Drawing.Point(48, 8);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(240, 64);
-			this.groupBox1.TabIndex = 2;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Stock Market Index";
-			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-			// 
-			// cboStockName
-			// 
-			this.cboStockName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cboStockName.Location = new System.Drawing.Point(8, 16);
-			this.cboStockName.Name = "cboStockName";
-			this.cboStockName.Size = new System.Drawing.Size(224, 21);
-			this.cboStockName.TabIndex = 3;
-			this.cboStockName.SelectedIndexChanged += new System.EventHandler(this.cboStockName_SelectedIndexChanged);
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.picLegendCandlestick);
-			this.groupBox2.Controls.Add(this.picLegendOHLC);
-			this.groupBox2.Controls.Add(this.picLegendHighLow);
-			this.groupBox2.Controls.Add(this.picLegendLine);
-			this.groupBox2.Controls.Add(this.rdbMyGlyph);
-			this.groupBox2.Controls.Add(this.rdbCandlestick);
-			this.groupBox2.Controls.Add(this.rdbOHLC);
-			this.groupBox2.Controls.Add(this.rdbHighLow);
-			this.groupBox2.Controls.Add(this.rdoLine);
-			this.groupBox2.Location = new System.Drawing.Point(296, 8);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(704, 64);
-			this.groupBox2.TabIndex = 3;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Line and Marker Type";
-			this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-			// 
-			// picLegendCandlestick
-			// 
-			this.picLegendCandlestick.Location = new System.Drawing.Point(536, 16);
-			this.picLegendCandlestick.Name = "picLegendCandlestick";
-			this.picLegendCandlestick.Size = new System.Drawing.Size(56, 40);
-			this.picLegendCandlestick.TabIndex = 10;
-			this.picLegendCandlestick.TabStop = false;
-			// 
-			// picLegendOHLC
-			// 
-			this.picLegendOHLC.Location = new System.Drawing.Point(392, 16);
-			this.picLegendOHLC.Name = "picLegendOHLC";
-			this.picLegendOHLC.Size = new System.Drawing.Size(56, 32);
-			this.picLegendOHLC.TabIndex = 9;
-			this.picLegendOHLC.TabStop = false;
-			// 
-			// picLegendHighLow
-			// 
-			this.picLegendHighLow.Location = new System.Drawing.Point(232, 16);
-			this.picLegendHighLow.Name = "picLegendHighLow";
-			this.picLegendHighLow.Size = new System.Drawing.Size(56, 40);
-			this.picLegendHighLow.TabIndex = 8;
-			this.picLegendHighLow.TabStop = false;
-			// 
-			// picLegendLine
-			// 
-			this.picLegendLine.Location = new System.Drawing.Point(80, 16);
-			this.picLegendLine.Name = "picLegendLine";
-			this.picLegendLine.Size = new System.Drawing.Size(48, 40);
-			this.picLegendLine.TabIndex = 7;
-			this.picLegendLine.TabStop = false;
-			// 
-			// rdbMyGlyph
-			// 
-			this.rdbMyGlyph.Location = new System.Drawing.Point(592, 24);
-			this.rdbMyGlyph.Name = "rdbMyGlyph";
-			this.rdbMyGlyph.Size = new System.Drawing.Size(96, 24);
-			this.rdbMyGlyph.TabIndex = 5;
-			this.rdbMyGlyph.Text = "Custom Glyph";
-			this.rdbMyGlyph.CheckedChanged += new System.EventHandler(this.rdbMyGlyph_CheckedChanged);
-			// 
-			// rdbCandlestick
-			// 
-			this.rdbCandlestick.Location = new System.Drawing.Point(448, 24);
-			this.rdbCandlestick.Name = "rdbCandlestick";
-			this.rdbCandlestick.Size = new System.Drawing.Size(88, 24);
-			this.rdbCandlestick.TabIndex = 2;
-			this.rdbCandlestick.Text = "Candlestick";
-			this.rdbCandlestick.CheckedChanged += new System.EventHandler(this.rdbCandlestick_CheckedChanged);
-			// 
-			// rdbOHLC
-			// 
-			this.rdbOHLC.Location = new System.Drawing.Point(288, 16);
-			this.rdbOHLC.Name = "rdbOHLC";
-			this.rdbOHLC.Size = new System.Drawing.Size(104, 40);
-			this.rdbOHLC.TabIndex = 1;
-			this.rdbOHLC.Text = "Open, High, Low, Close";
-			this.rdbOHLC.CheckedChanged += new System.EventHandler(this.rdbOHLC_CheckedChanged);
-			// 
-			// rdbHighLow
-			// 
-			this.rdbHighLow.Location = new System.Drawing.Point(144, 24);
-			this.rdbHighLow.Name = "rdbHighLow";
-			this.rdbHighLow.Size = new System.Drawing.Size(96, 24);
-			this.rdbHighLow.TabIndex = 0;
-			this.rdbHighLow.Text = "High Low Bar";
-			this.rdbHighLow.CheckedChanged += new System.EventHandler(this.rdbHighLow_CheckedChanged);
-			// 
-			// rdoLine
-			// 
-			this.rdoLine.Checked = true;
-			this.rdoLine.Location = new System.Drawing.Point(16, 24);
-			this.rdoLine.Name = "rdoLine";
-			this.rdoLine.Size = new System.Drawing.Size(56, 24);
-			this.rdoLine.TabIndex = 6;
-			this.rdoLine.TabStop = true;
-			this.rdoLine.Text = "Line";
-			this.rdoLine.CheckedChanged += new System.EventHandler(this.rdoLine_CheckedChanged);
-			// 
-			// pictureBox1
-			// 
-			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Location = new System.Drawing.Point(120, 152);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
-			this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-			// 
-			// pictureBox2
-			// 
-			this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox2.Location = new System.Drawing.Point(184, 152);
-			this.pictureBox2.Name = "pictureBox2";
-			this.pictureBox2.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox2.TabIndex = 6;
-			this.pictureBox2.TabStop = false;
-			this.toolTip1.SetToolTip(this.pictureBox2, "Hello World!");
-			this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-			// 
-			// pictureBox3
-			// 
-			this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox3.Location = new System.Drawing.Point(248, 152);
-			this.pictureBox3.Name = "pictureBox3";
-			this.pictureBox3.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox3.TabIndex = 7;
-			this.pictureBox3.TabStop = false;
-			this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-			// 
-			// pictureBox4
-			// 
-			this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox4.Location = new System.Drawing.Point(312, 152);
-			this.pictureBox4.Name = "pictureBox4";
-			this.pictureBox4.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox4.TabIndex = 8;
-			this.pictureBox4.TabStop = false;
-			this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-			this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
-			this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
-			// 
-			// pictureBox5
-			// 
-			this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox5.Location = new System.Drawing.Point(424, 152);
-			this.pictureBox5.Name = "pictureBox5";
-			this.pictureBox5.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox5.TabIndex = 9;
-			this.pictureBox5.TabStop = false;
-			this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-			this.pictureBox5.MouseHover += new System.EventHandler(this.pictureBox5_MouseHover);
-			// 
-			// pictureBox6
-			// 
-			this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox6.Location = new System.Drawing.Point(600, 152);
-			this.pictureBox6.Name = "pictureBox6";
-			this.pictureBox6.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox6.TabIndex = 11;
-			this.pictureBox6.TabStop = false;
-			this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
-			// 
-			// pictureBox7
-			// 
-			this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox7.Location = new System.Drawing.Point(728, 152);
-			this.pictureBox7.Name = "pictureBox7";
-			this.pictureBox7.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox7.TabIndex = 12;
-			this.pictureBox7.TabStop = false;
-			this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-			// 
-			// pictureBox8
-			// 
-			this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox8.Location = new System.Drawing.Point(804, 152);
-			this.pictureBox8.Name = "pictureBox8";
-			this.pictureBox8.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox8.TabIndex = 13;
-			this.pictureBox8.TabStop = false;
-			this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-			// 
-			// pictureBox9
-			// 
-			this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox9.Location = new System.Drawing.Point(872, 152);
-			this.pictureBox9.Name = "pictureBox9";
-			this.pictureBox9.Size = new System.Drawing.Size(60, 40);
-			this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBox9.TabIndex = 14;
-			this.pictureBox9.TabStop = false;
-			this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-			// 
-			// picSpeech1
-			// 
-			this.picSpeech1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picSpeech1.Location = new System.Drawing.Point(104, 16);
-			this.picSpeech1.Name = "picSpeech1";
-			this.picSpeech1.Size = new System.Drawing.Size(360, 224);
-			this.picSpeech1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picSpeech1.TabIndex = 18;
-			this.picSpeech1.TabStop = false;
-			// 
-			// linkLabel1
-			// 
-			this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.linkLabel1.Location = new System.Drawing.Point(832, 24);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(112, 24);
-			this.linkLabel1.TabIndex = 19;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "View Larger Image";
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-			// 
-			// checkBox1
-			// 
-			this.checkBox1.Location = new System.Drawing.Point(656, 24);
-			this.checkBox1.Name = "checkBox1";
-			this.checkBox1.Size = new System.Drawing.Size(200, 16);
-			this.checkBox1.TabIndex = 20;
-			this.checkBox1.Text = "Federal Reserve interest rates";
-			// 
-			// chkShowNewsEvents
-			// 
-			this.chkShowNewsEvents.Location = new System.Drawing.Point(288, 24);
-			this.chkShowNewsEvents.Name = "chkShowNewsEvents";
-			this.chkShowNewsEvents.Size = new System.Drawing.Size(136, 16);
-			this.chkShowNewsEvents.TabIndex = 21;
-			this.chkShowNewsEvents.Text = "News events";
-			this.chkShowNewsEvents.CheckedChanged += new System.EventHandler(this.chkShowNewsEvents_CheckedChanged);
-			// 
-			// lblSpeechDate1
-			// 
-			this.lblSpeechDate1.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate1.Location = new System.Drawing.Point(112, 192);
-			this.lblSpeechDate1.Name = "lblSpeechDate1";
-			this.lblSpeechDate1.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate1.TabIndex = 22;
-			this.lblSpeechDate1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate2
-			// 
-			this.lblSpeechDate2.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate2.Location = new System.Drawing.Point(176, 192);
-			this.lblSpeechDate2.Name = "lblSpeechDate2";
-			this.lblSpeechDate2.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate2.TabIndex = 23;
-			this.lblSpeechDate2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate3
-			// 
-			this.lblSpeechDate3.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate3.Location = new System.Drawing.Point(240, 192);
-			this.lblSpeechDate3.Name = "lblSpeechDate3";
-			this.lblSpeechDate3.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate3.TabIndex = 24;
-			this.lblSpeechDate3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate4
-			// 
-			this.lblSpeechDate4.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate4.Location = new System.Drawing.Point(312, 192);
-			this.lblSpeechDate4.Name = "lblSpeechDate4";
-			this.lblSpeechDate4.Size = new System.Drawing.Size(64, 16);
-			this.lblSpeechDate4.TabIndex = 25;
-			this.lblSpeechDate4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate5
-			// 
-			this.lblSpeechDate5.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate5.Location = new System.Drawing.Point(418, 192);
-			this.lblSpeechDate5.Name = "lblSpeechDate5";
-			this.lblSpeechDate5.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate5.TabIndex = 26;
-			this.lblSpeechDate5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate6
-			// 
-			this.lblSpeechDate6.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate6.Location = new System.Drawing.Point(592, 192);
-			this.lblSpeechDate6.Name = "lblSpeechDate6";
-			this.lblSpeechDate6.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate6.TabIndex = 27;
-			this.lblSpeechDate6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate7
-			// 
-			this.lblSpeechDate7.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate7.Location = new System.Drawing.Point(720, 192);
-			this.lblSpeechDate7.Name = "lblSpeechDate7";
-			this.lblSpeechDate7.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate7.TabIndex = 28;
-			this.lblSpeechDate7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate8
-			// 
-			this.lblSpeechDate8.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate8.Location = new System.Drawing.Point(796, 192);
-			this.lblSpeechDate8.Name = "lblSpeechDate8";
-			this.lblSpeechDate8.Size = new System.Drawing.Size(72, 16);
-			this.lblSpeechDate8.TabIndex = 29;
-			this.lblSpeechDate8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// lblSpeechDate9
-			// 
-			this.lblSpeechDate9.BackColor = System.Drawing.Color.White;
-			this.lblSpeechDate9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-			this.lblSpeechDate9.Location = new System.Drawing.Point(872, 192);
-			this.lblSpeechDate9.Name = "lblSpeechDate9";
-			this.lblSpeechDate9.Size = new System.Drawing.Size(64, 16);
-			this.lblSpeechDate9.TabIndex = 30;
-			this.lblSpeechDate9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// chkShowMinMax
-			// 
-			this.chkShowMinMax.Location = new System.Drawing.Point(480, 24);
-			this.chkShowMinMax.Name = "chkShowMinMax";
-			this.chkShowMinMax.Size = new System.Drawing.Size(136, 16);
-			this.chkShowMinMax.TabIndex = 34;
-			this.chkShowMinMax.Text = "Min and max";
-			this.chkShowMinMax.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
-			// 
-			// groupBox5
-			// 
-			this.groupBox5.Controls.Add(this.checkBox3);
-			this.groupBox5.Controls.Add(this.checkBox1);
-			this.groupBox5.Controls.Add(this.chkShowNewsEvents);
-			this.groupBox5.Controls.Add(this.chkShowMinMax);
-			this.groupBox5.Location = new System.Drawing.Point(48, 77);
-			this.groupBox5.Name = "groupBox5";
-			this.groupBox5.Size = new System.Drawing.Size(952, 51);
-			this.groupBox5.TabIndex = 35;
-			this.groupBox5.TabStop = false;
-			this.groupBox5.Text = "Chart Options";
-			this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
-			// 
-			// checkBox3
-			// 
-			this.checkBox3.Location = new System.Drawing.Point(40, 24);
-			this.checkBox3.Name = "checkBox3";
-			this.checkBox3.Size = new System.Drawing.Size(192, 16);
-			this.checkBox3.TabIndex = 35;
-			this.checkBox3.Text = "Federal Reserve Testimony";
-			// 
-			// picEventBearStearns
-			// 
-			this.picEventBearStearns.Location = new System.Drawing.Point(360, 328);
-			this.picEventBearStearns.Name = "picEventBearStearns";
-			this.picEventBearStearns.Size = new System.Drawing.Size(80, 32);
-			this.picEventBearStearns.TabIndex = 36;
-			this.picEventBearStearns.TabStop = false;
-			// 
-			// grpSpeech
-			// 
-			this.grpSpeech.Controls.Add(this.picSpeech2);
-			this.grpSpeech.Controls.Add(this.picSpeech1);
-			this.grpSpeech.Controls.Add(this.linkLabel1);
-			this.grpSpeech.Location = new System.Drawing.Point(48, 424);
-			this.grpSpeech.Name = "grpSpeech";
-			this.grpSpeech.Size = new System.Drawing.Size(952, 248);
-			this.grpSpeech.TabIndex = 38;
-			this.grpSpeech.TabStop = false;
-			this.grpSpeech.Text = "groupBox3";
-			// 
-			// picSpeech2
-			// 
-			this.picSpeech2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.picSpeech2.Location = new System.Drawing.Point(480, 16);
-			this.picSpeech2.Name = "picSpeech2";
-			this.picSpeech2.Size = new System.Drawing.Size(344, 224);
-			this.picSpeech2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.picSpeech2.TabIndex = 20;
-			this.picSpeech2.TabStop = false;
-			// 
-			// picEventFannieFreddie
-			// 
-			this.picEventFannieFreddie.Location = new System.Drawing.Point(632, 224);
-			this.picEventFannieFreddie.Name = "picEventFannieFreddie";
-			this.picEventFannieFreddie.Size = new System.Drawing.Size(80, 56);
-			this.picEventFannieFreddie.TabIndex = 39;
-			this.picEventFannieFreddie.TabStop = false;
-			// 
-			// picEventLehmanBros
-			// 
-			this.picEventLehmanBros.Location = new System.Drawing.Point(728, 224);
-			this.picEventLehmanBros.Name = "picEventLehmanBros";
-			this.picEventLehmanBros.Size = new System.Drawing.Size(96, 32);
-			this.picEventLehmanBros.TabIndex = 40;
-			this.picEventLehmanBros.TabStop = false;
-			// 
-			// picEventAIG
-			// 
-			this.picEventAIG.Location = new System.Drawing.Point(832, 232);
-			this.picEventAIG.Name = "picEventAIG";
-			this.picEventAIG.Size = new System.Drawing.Size(72, 40);
-			this.picEventAIG.TabIndex = 41;
-			this.picEventAIG.TabStop = false;
-			// 
-			// Form1
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(1024, 694);
-			this.Controls.Add(this.picEventAIG);
-			this.Controls.Add(this.picEventLehmanBros);
-			this.Controls.Add(this.picEventFannieFreddie);
-			this.Controls.Add(this.grpSpeech);
-			this.Controls.Add(this.picEventBearStearns);
-			this.Controls.Add(this.groupBox5);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.pictureBox8);
-			this.Controls.Add(this.pictureBox1);
-			this.Controls.Add(this.lblSpeechDate3);
-			this.Controls.Add(this.pictureBox2);
-			this.Controls.Add(this.lblSpeechDate4);
-			this.Controls.Add(this.pictureBox3);
-			this.Controls.Add(this.pictureBox4);
-			this.Controls.Add(this.pictureBox5);
-			this.Controls.Add(this.lblSpeechDate1);
-			this.Controls.Add(this.lblSpeechDate2);
-			this.Controls.Add(this.pictureBox6);
-			this.Controls.Add(this.pictureBox7);
-			this.Controls.Add(this.lblSpeechDate5);
-			this.Controls.Add(this.lblSpeechDate6);
-			this.Controls.Add(this.lblSpeechDate7);
-			this.Controls.Add(this.pictureBox9);
-			this.Controls.Add(this.lblSpeechDate8);
-			this.Controls.Add(this.lblSpeechDate9);
-			this.Name = "Form1";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "CS 525D - Stock Market Visual Explorer";
-			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Load += new System.EventHandler(this.Form1_Load);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox5.ResumeLayout(false);
-			this.grpSpeech.ResumeLayout(false);
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboStockName = new System.Windows.Forms.ComboBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.picLegendCandlestick = new System.Windows.Forms.PictureBox();
+            this.picLegendOHLC = new System.Windows.Forms.PictureBox();
+            this.picLegendHighLow = new System.Windows.Forms.PictureBox();
+            this.picLegendLine = new System.Windows.Forms.PictureBox();
+            this.rdbMyGlyph = new System.Windows.Forms.RadioButton();
+            this.rdbCandlestick = new System.Windows.Forms.RadioButton();
+            this.rdbOHLC = new System.Windows.Forms.RadioButton();
+            this.rdbHighLow = new System.Windows.Forms.RadioButton();
+            this.rdoLine = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.picSpeech1 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkShowNewsEvents = new System.Windows.Forms.CheckBox();
+            this.lblSpeechDate1 = new System.Windows.Forms.Label();
+            this.lblSpeechDate2 = new System.Windows.Forms.Label();
+            this.lblSpeechDate3 = new System.Windows.Forms.Label();
+            this.lblSpeechDate4 = new System.Windows.Forms.Label();
+            this.lblSpeechDate5 = new System.Windows.Forms.Label();
+            this.lblSpeechDate6 = new System.Windows.Forms.Label();
+            this.lblSpeechDate7 = new System.Windows.Forms.Label();
+            this.lblSpeechDate8 = new System.Windows.Forms.Label();
+            this.lblSpeechDate9 = new System.Windows.Forms.Label();
+            this.chkShowMinMax = new System.Windows.Forms.CheckBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.picEventBearStearns = new System.Windows.Forms.PictureBox();
+            this.grpSpeech = new System.Windows.Forms.GroupBox();
+            this.picSpeech2 = new System.Windows.Forms.PictureBox();
+            this.picEventFannieFreddie = new System.Windows.Forms.PictureBox();
+            this.picEventLehmanBros = new System.Windows.Forms.PictureBox();
+            this.picEventAIG = new System.Windows.Forms.PictureBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendCandlestick)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendOHLC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendHighLow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSpeech1)).BeginInit();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventBearStearns)).BeginInit();
+            this.grpSpeech.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSpeech2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventFannieFreddie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventLehmanBros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventAIG)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboStockName);
+            this.groupBox1.Location = new System.Drawing.Point(48, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(240, 64);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Stock Market Index";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // cboStockName
+            // 
+            this.cboStockName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStockName.Location = new System.Drawing.Point(8, 16);
+            this.cboStockName.Name = "cboStockName";
+            this.cboStockName.Size = new System.Drawing.Size(224, 21);
+            this.cboStockName.TabIndex = 3;
+            this.cboStockName.SelectedIndexChanged += new System.EventHandler(this.cboStockName_SelectedIndexChanged);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.picLegendCandlestick);
+            this.groupBox2.Controls.Add(this.picLegendOHLC);
+            this.groupBox2.Controls.Add(this.picLegendHighLow);
+            this.groupBox2.Controls.Add(this.picLegendLine);
+            this.groupBox2.Controls.Add(this.rdbMyGlyph);
+            this.groupBox2.Controls.Add(this.rdbCandlestick);
+            this.groupBox2.Controls.Add(this.rdbOHLC);
+            this.groupBox2.Controls.Add(this.rdbHighLow);
+            this.groupBox2.Controls.Add(this.rdoLine);
+            this.groupBox2.Location = new System.Drawing.Point(296, 8);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(704, 64);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Line and Marker Type";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // picLegendCandlestick
+            // 
+            this.picLegendCandlestick.Location = new System.Drawing.Point(536, 16);
+            this.picLegendCandlestick.Name = "picLegendCandlestick";
+            this.picLegendCandlestick.Size = new System.Drawing.Size(56, 40);
+            this.picLegendCandlestick.TabIndex = 10;
+            this.picLegendCandlestick.TabStop = false;
+            // 
+            // picLegendOHLC
+            // 
+            this.picLegendOHLC.Location = new System.Drawing.Point(392, 16);
+            this.picLegendOHLC.Name = "picLegendOHLC";
+            this.picLegendOHLC.Size = new System.Drawing.Size(56, 32);
+            this.picLegendOHLC.TabIndex = 9;
+            this.picLegendOHLC.TabStop = false;
+            // 
+            // picLegendHighLow
+            // 
+            this.picLegendHighLow.Location = new System.Drawing.Point(232, 16);
+            this.picLegendHighLow.Name = "picLegendHighLow";
+            this.picLegendHighLow.Size = new System.Drawing.Size(56, 40);
+            this.picLegendHighLow.TabIndex = 8;
+            this.picLegendHighLow.TabStop = false;
+            // 
+            // picLegendLine
+            // 
+            this.picLegendLine.Location = new System.Drawing.Point(80, 16);
+            this.picLegendLine.Name = "picLegendLine";
+            this.picLegendLine.Size = new System.Drawing.Size(48, 40);
+            this.picLegendLine.TabIndex = 7;
+            this.picLegendLine.TabStop = false;
+            // 
+            // rdbMyGlyph
+            // 
+            this.rdbMyGlyph.Location = new System.Drawing.Point(592, 24);
+            this.rdbMyGlyph.Name = "rdbMyGlyph";
+            this.rdbMyGlyph.Size = new System.Drawing.Size(96, 24);
+            this.rdbMyGlyph.TabIndex = 5;
+            this.rdbMyGlyph.Text = "Custom Glyph";
+            this.rdbMyGlyph.CheckedChanged += new System.EventHandler(this.rdbMyGlyph_CheckedChanged);
+            // 
+            // rdbCandlestick
+            // 
+            this.rdbCandlestick.Location = new System.Drawing.Point(448, 24);
+            this.rdbCandlestick.Name = "rdbCandlestick";
+            this.rdbCandlestick.Size = new System.Drawing.Size(88, 24);
+            this.rdbCandlestick.TabIndex = 2;
+            this.rdbCandlestick.Text = "Candlestick";
+            this.rdbCandlestick.CheckedChanged += new System.EventHandler(this.rdbCandlestick_CheckedChanged);
+            // 
+            // rdbOHLC
+            // 
+            this.rdbOHLC.Location = new System.Drawing.Point(288, 16);
+            this.rdbOHLC.Name = "rdbOHLC";
+            this.rdbOHLC.Size = new System.Drawing.Size(104, 40);
+            this.rdbOHLC.TabIndex = 1;
+            this.rdbOHLC.Text = "Open, High, Low, Close";
+            this.rdbOHLC.CheckedChanged += new System.EventHandler(this.rdbOHLC_CheckedChanged);
+            // 
+            // rdbHighLow
+            // 
+            this.rdbHighLow.Location = new System.Drawing.Point(144, 24);
+            this.rdbHighLow.Name = "rdbHighLow";
+            this.rdbHighLow.Size = new System.Drawing.Size(96, 24);
+            this.rdbHighLow.TabIndex = 0;
+            this.rdbHighLow.Text = "High Low Bar";
+            this.rdbHighLow.CheckedChanged += new System.EventHandler(this.rdbHighLow_CheckedChanged);
+            // 
+            // rdoLine
+            // 
+            this.rdoLine.Checked = true;
+            this.rdoLine.Location = new System.Drawing.Point(16, 24);
+            this.rdoLine.Name = "rdoLine";
+            this.rdoLine.Size = new System.Drawing.Size(56, 24);
+            this.rdoLine.TabIndex = 6;
+            this.rdoLine.TabStop = true;
+            this.rdoLine.Text = "Line";
+            this.rdoLine.CheckedChanged += new System.EventHandler(this.rdoLine_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox1.Location = new System.Drawing.Point(120, 152);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Location = new System.Drawing.Point(184, 152);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox2, "Hello World!");
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Location = new System.Drawing.Point(248, 152);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox4.Location = new System.Drawing.Point(312, 152);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox4.TabIndex = 8;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.pictureBox4.MouseEnter += new System.EventHandler(this.pictureBox4_MouseEnter);
+            this.pictureBox4.MouseLeave += new System.EventHandler(this.pictureBox4_MouseLeave);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox5.Location = new System.Drawing.Point(424, 152);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.pictureBox5.MouseHover += new System.EventHandler(this.pictureBox5_MouseHover);
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox6.Location = new System.Drawing.Point(600, 152);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox7.Location = new System.Drawing.Point(728, 152);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox7.TabIndex = 12;
+            this.pictureBox7.TabStop = false;
+            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox8.Location = new System.Drawing.Point(804, 152);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox8.TabIndex = 13;
+            this.pictureBox8.TabStop = false;
+            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox9.Location = new System.Drawing.Point(872, 152);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(60, 40);
+            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox9.TabIndex = 14;
+            this.pictureBox9.TabStop = false;
+            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            // 
+            // picSpeech1
+            // 
+            this.picSpeech1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSpeech1.Location = new System.Drawing.Point(104, 16);
+            this.picSpeech1.Name = "picSpeech1";
+            this.picSpeech1.Size = new System.Drawing.Size(360, 224);
+            this.picSpeech1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSpeech1.TabIndex = 18;
+            this.picSpeech1.TabStop = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(832, 24);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(112, 24);
+            this.linkLabel1.TabIndex = 19;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View Larger Image";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.Location = new System.Drawing.Point(656, 24);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(200, 16);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Federal Reserve interest rates";
+            // 
+            // chkShowNewsEvents
+            // 
+            this.chkShowNewsEvents.Location = new System.Drawing.Point(288, 24);
+            this.chkShowNewsEvents.Name = "chkShowNewsEvents";
+            this.chkShowNewsEvents.Size = new System.Drawing.Size(136, 16);
+            this.chkShowNewsEvents.TabIndex = 21;
+            this.chkShowNewsEvents.Text = "News events";
+            this.chkShowNewsEvents.CheckedChanged += new System.EventHandler(this.chkShowNewsEvents_CheckedChanged);
+            // 
+            // lblSpeechDate1
+            // 
+            this.lblSpeechDate1.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate1.Location = new System.Drawing.Point(112, 192);
+            this.lblSpeechDate1.Name = "lblSpeechDate1";
+            this.lblSpeechDate1.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate1.TabIndex = 22;
+            this.lblSpeechDate1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate2
+            // 
+            this.lblSpeechDate2.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate2.Location = new System.Drawing.Point(176, 192);
+            this.lblSpeechDate2.Name = "lblSpeechDate2";
+            this.lblSpeechDate2.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate2.TabIndex = 23;
+            this.lblSpeechDate2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate3
+            // 
+            this.lblSpeechDate3.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate3.Location = new System.Drawing.Point(240, 192);
+            this.lblSpeechDate3.Name = "lblSpeechDate3";
+            this.lblSpeechDate3.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate3.TabIndex = 24;
+            this.lblSpeechDate3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate4
+            // 
+            this.lblSpeechDate4.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate4.Location = new System.Drawing.Point(312, 192);
+            this.lblSpeechDate4.Name = "lblSpeechDate4";
+            this.lblSpeechDate4.Size = new System.Drawing.Size(64, 16);
+            this.lblSpeechDate4.TabIndex = 25;
+            this.lblSpeechDate4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate5
+            // 
+            this.lblSpeechDate5.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate5.Location = new System.Drawing.Point(418, 192);
+            this.lblSpeechDate5.Name = "lblSpeechDate5";
+            this.lblSpeechDate5.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate5.TabIndex = 26;
+            this.lblSpeechDate5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate6
+            // 
+            this.lblSpeechDate6.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate6.Location = new System.Drawing.Point(592, 192);
+            this.lblSpeechDate6.Name = "lblSpeechDate6";
+            this.lblSpeechDate6.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate6.TabIndex = 27;
+            this.lblSpeechDate6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate7
+            // 
+            this.lblSpeechDate7.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate7.Location = new System.Drawing.Point(720, 192);
+            this.lblSpeechDate7.Name = "lblSpeechDate7";
+            this.lblSpeechDate7.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate7.TabIndex = 28;
+            this.lblSpeechDate7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate8
+            // 
+            this.lblSpeechDate8.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate8.Location = new System.Drawing.Point(796, 192);
+            this.lblSpeechDate8.Name = "lblSpeechDate8";
+            this.lblSpeechDate8.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate8.TabIndex = 29;
+            this.lblSpeechDate8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblSpeechDate9
+            // 
+            this.lblSpeechDate9.BackColor = System.Drawing.Color.White;
+            this.lblSpeechDate9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSpeechDate9.Location = new System.Drawing.Point(872, 192);
+            this.lblSpeechDate9.Name = "lblSpeechDate9";
+            this.lblSpeechDate9.Size = new System.Drawing.Size(64, 16);
+            this.lblSpeechDate9.TabIndex = 30;
+            this.lblSpeechDate9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chkShowMinMax
+            // 
+            this.chkShowMinMax.Location = new System.Drawing.Point(480, 24);
+            this.chkShowMinMax.Name = "chkShowMinMax";
+            this.chkShowMinMax.Size = new System.Drawing.Size(136, 16);
+            this.chkShowMinMax.TabIndex = 34;
+            this.chkShowMinMax.Text = "Min and max";
+            this.chkShowMinMax.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.checkBox3);
+            this.groupBox5.Controls.Add(this.checkBox1);
+            this.groupBox5.Controls.Add(this.chkShowNewsEvents);
+            this.groupBox5.Controls.Add(this.chkShowMinMax);
+            this.groupBox5.Location = new System.Drawing.Point(48, 77);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(952, 51);
+            this.groupBox5.TabIndex = 35;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Chart Options";
+            this.groupBox5.Enter += new System.EventHandler(this.groupBox5_Enter);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.Location = new System.Drawing.Point(40, 24);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(192, 16);
+            this.checkBox3.TabIndex = 35;
+            this.checkBox3.Text = "Federal Reserve Testimony";
+            // 
+            // picEventBearStearns
+            // 
+            this.picEventBearStearns.Location = new System.Drawing.Point(360, 328);
+            this.picEventBearStearns.Name = "picEventBearStearns";
+            this.picEventBearStearns.Size = new System.Drawing.Size(80, 32);
+            this.picEventBearStearns.TabIndex = 36;
+            this.picEventBearStearns.TabStop = false;
+            // 
+            // grpSpeech
+            // 
+            this.grpSpeech.Controls.Add(this.picSpeech2);
+            this.grpSpeech.Controls.Add(this.picSpeech1);
+            this.grpSpeech.Controls.Add(this.linkLabel1);
+            this.grpSpeech.Location = new System.Drawing.Point(48, 424);
+            this.grpSpeech.Name = "grpSpeech";
+            this.grpSpeech.Size = new System.Drawing.Size(952, 248);
+            this.grpSpeech.TabIndex = 38;
+            this.grpSpeech.TabStop = false;
+            this.grpSpeech.Text = "groupBox3";
+            // 
+            // picSpeech2
+            // 
+            this.picSpeech2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picSpeech2.Location = new System.Drawing.Point(480, 16);
+            this.picSpeech2.Name = "picSpeech2";
+            this.picSpeech2.Size = new System.Drawing.Size(344, 224);
+            this.picSpeech2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picSpeech2.TabIndex = 20;
+            this.picSpeech2.TabStop = false;
+            // 
+            // picEventFannieFreddie
+            // 
+            this.picEventFannieFreddie.Location = new System.Drawing.Point(632, 224);
+            this.picEventFannieFreddie.Name = "picEventFannieFreddie";
+            this.picEventFannieFreddie.Size = new System.Drawing.Size(80, 56);
+            this.picEventFannieFreddie.TabIndex = 39;
+            this.picEventFannieFreddie.TabStop = false;
+            // 
+            // picEventLehmanBros
+            // 
+            this.picEventLehmanBros.Location = new System.Drawing.Point(728, 224);
+            this.picEventLehmanBros.Name = "picEventLehmanBros";
+            this.picEventLehmanBros.Size = new System.Drawing.Size(96, 32);
+            this.picEventLehmanBros.TabIndex = 40;
+            this.picEventLehmanBros.TabStop = false;
+            // 
+            // picEventAIG
+            // 
+            this.picEventAIG.Location = new System.Drawing.Point(832, 232);
+            this.picEventAIG.Name = "picEventAIG";
+            this.picEventAIG.Size = new System.Drawing.Size(72, 40);
+            this.picEventAIG.TabIndex = 41;
+            this.picEventAIG.TabStop = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(1024, 694);
+            this.Controls.Add(this.picEventAIG);
+            this.Controls.Add(this.picEventLehmanBros);
+            this.Controls.Add(this.picEventFannieFreddie);
+            this.Controls.Add(this.grpSpeech);
+            this.Controls.Add(this.picEventBearStearns);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.pictureBox8);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblSpeechDate3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.lblSpeechDate4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.lblSpeechDate1);
+            this.Controls.Add(this.lblSpeechDate2);
+            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pictureBox7);
+            this.Controls.Add(this.lblSpeechDate5);
+            this.Controls.Add(this.lblSpeechDate6);
+            this.Controls.Add(this.lblSpeechDate7);
+            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.lblSpeechDate8);
+            this.Controls.Add(this.lblSpeechDate9);
+            this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Stock Market Visual Explorer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendCandlestick)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendOHLC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendHighLow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLegendLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSpeech1)).EndInit();
+            this.groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picEventBearStearns)).EndInit();
+            this.grpSpeech.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picSpeech2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventFannieFreddie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventLehmanBros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEventAIG)).EndInit();
+            this.ResumeLayout(false);
 
 		}
 		#endregion
@@ -1657,7 +1717,7 @@ namespace WindowsApplication2
 
 			int yStartLoc = 2;
 			int xLoc = 20;
-			int yLoc = 10;
+			// int yLoc = 10;
 
 			using (Graphics g = picLegendLine.CreateGraphics())
 			{
