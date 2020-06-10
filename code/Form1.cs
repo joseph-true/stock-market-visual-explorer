@@ -106,13 +106,13 @@ namespace WindowsApplication2
 
 
 		// Axis points
-		static int m_ChartWidth = 1280;	// chart width
-		static int m_offsetX = 50;
-		static int m_offsetY = 400;	// 
+		static int m_ChartWidth = 1060;	// chart width
+		static int m_offsetX = 60;
+		static int m_offsetY = 340;	// 
 		
 		static int m_xAxisStart = m_offsetX;
 		static int m_yAxisStart = m_offsetY;
-		static int m_yAxisEnd =220;	// top of chart
+		static int m_yAxisEnd =120;	// top of chart
 		static int m_pAxisInterval = 40;
 		static int m_yAxisHeight = m_yAxisStart - m_yAxisEnd;	// height of chart
 		
@@ -170,6 +170,7 @@ namespace WindowsApplication2
 		private System.Windows.Forms.PictureBox picEventLehmanBros;
 		private System.Windows.Forms.PictureBox picEventAIG;
         private Label lblWordCloudTip;
+        private Label label1;
 		private int[] m_myEvents = new int[10];
 
 		public Form1()
@@ -254,6 +255,7 @@ namespace WindowsApplication2
             this.picEventFannieFreddie = new System.Windows.Forms.PictureBox();
             this.picEventLehmanBros = new System.Windows.Forms.PictureBox();
             this.picEventAIG = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendCandlestick)).BeginInit();
@@ -282,7 +284,7 @@ namespace WindowsApplication2
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.cboStockName);
-            this.groupBox1.Location = new System.Drawing.Point(48, 8);
+            this.groupBox1.Location = new System.Drawing.Point(1155, 31);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(240, 64);
             this.groupBox1.TabIndex = 2;
@@ -310,9 +312,9 @@ namespace WindowsApplication2
             this.groupBox2.Controls.Add(this.rdbOHLC);
             this.groupBox2.Controls.Add(this.rdbHighLow);
             this.groupBox2.Controls.Add(this.rdoLine);
-            this.groupBox2.Location = new System.Drawing.Point(296, 8);
+            this.groupBox2.Location = new System.Drawing.Point(1155, 293);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(704, 64);
+            this.groupBox2.Size = new System.Drawing.Size(206, 267);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Line and Marker Type";
@@ -320,7 +322,7 @@ namespace WindowsApplication2
             // 
             // picLegendCandlestick
             // 
-            this.picLegendCandlestick.Location = new System.Drawing.Point(529, 24);
+            this.picLegendCandlestick.Location = new System.Drawing.Point(127, 154);
             this.picLegendCandlestick.Name = "picLegendCandlestick";
             this.picLegendCandlestick.Size = new System.Drawing.Size(56, 32);
             this.picLegendCandlestick.TabIndex = 10;
@@ -328,7 +330,7 @@ namespace WindowsApplication2
             // 
             // picLegendOHLC
             // 
-            this.picLegendOHLC.Location = new System.Drawing.Point(388, 24);
+            this.picLegendOHLC.Location = new System.Drawing.Point(127, 106);
             this.picLegendOHLC.Name = "picLegendOHLC";
             this.picLegendOHLC.Size = new System.Drawing.Size(56, 32);
             this.picLegendOHLC.TabIndex = 9;
@@ -336,7 +338,7 @@ namespace WindowsApplication2
             // 
             // picLegendHighLow
             // 
-            this.picLegendHighLow.Location = new System.Drawing.Point(229, 24);
+            this.picLegendHighLow.Location = new System.Drawing.Point(127, 62);
             this.picLegendHighLow.Name = "picLegendHighLow";
             this.picLegendHighLow.Size = new System.Drawing.Size(56, 32);
             this.picLegendHighLow.TabIndex = 8;
@@ -344,7 +346,7 @@ namespace WindowsApplication2
             // 
             // picLegendLine
             // 
-            this.picLegendLine.Location = new System.Drawing.Point(65, 24);
+            this.picLegendLine.Location = new System.Drawing.Point(127, 24);
             this.picLegendLine.Name = "picLegendLine";
             this.picLegendLine.Size = new System.Drawing.Size(48, 32);
             this.picLegendLine.TabIndex = 7;
@@ -352,7 +354,7 @@ namespace WindowsApplication2
             // 
             // rdbMyGlyph
             // 
-            this.rdbMyGlyph.Location = new System.Drawing.Point(592, 24);
+            this.rdbMyGlyph.Location = new System.Drawing.Point(19, 189);
             this.rdbMyGlyph.Name = "rdbMyGlyph";
             this.rdbMyGlyph.Size = new System.Drawing.Size(96, 24);
             this.rdbMyGlyph.TabIndex = 5;
@@ -361,7 +363,7 @@ namespace WindowsApplication2
             // 
             // rdbCandlestick
             // 
-            this.rdbCandlestick.Location = new System.Drawing.Point(448, 24);
+            this.rdbCandlestick.Location = new System.Drawing.Point(18, 148);
             this.rdbCandlestick.Name = "rdbCandlestick";
             this.rdbCandlestick.Size = new System.Drawing.Size(88, 24);
             this.rdbCandlestick.TabIndex = 2;
@@ -370,7 +372,7 @@ namespace WindowsApplication2
             // 
             // rdbOHLC
             // 
-            this.rdbOHLC.Location = new System.Drawing.Point(304, 16);
+            this.rdbOHLC.Location = new System.Drawing.Point(16, 98);
             this.rdbOHLC.Name = "rdbOHLC";
             this.rdbOHLC.Size = new System.Drawing.Size(90, 40);
             this.rdbOHLC.TabIndex = 1;
@@ -379,7 +381,7 @@ namespace WindowsApplication2
             // 
             // rdbHighLow
             // 
-            this.rdbHighLow.Location = new System.Drawing.Point(137, 24);
+            this.rdbHighLow.Location = new System.Drawing.Point(18, 62);
             this.rdbHighLow.Name = "rdbHighLow";
             this.rdbHighLow.Size = new System.Drawing.Size(96, 24);
             this.rdbHighLow.TabIndex = 0;
@@ -401,7 +403,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(120, 152);
+            this.pictureBox1.Location = new System.Drawing.Point(120, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(60, 40);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -413,7 +415,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.White;
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Location = new System.Drawing.Point(184, 152);
+            this.pictureBox2.Location = new System.Drawing.Point(184, 55);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(60, 40);
             this.pictureBox2.TabIndex = 6;
@@ -425,7 +427,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.White;
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Location = new System.Drawing.Point(248, 152);
+            this.pictureBox3.Location = new System.Drawing.Point(248, 55);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(60, 40);
             this.pictureBox3.TabIndex = 7;
@@ -436,7 +438,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.White;
             this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Location = new System.Drawing.Point(312, 152);
+            this.pictureBox4.Location = new System.Drawing.Point(312, 55);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(60, 40);
             this.pictureBox4.TabIndex = 8;
@@ -449,7 +451,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.White;
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Location = new System.Drawing.Point(424, 152);
+            this.pictureBox5.Location = new System.Drawing.Point(380, 55);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(60, 40);
             this.pictureBox5.TabIndex = 9;
@@ -461,7 +463,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.White;
             this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Location = new System.Drawing.Point(600, 152);
+            this.pictureBox6.Location = new System.Drawing.Point(488, 55);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(60, 40);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -473,7 +475,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.White;
             this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Location = new System.Drawing.Point(728, 152);
+            this.pictureBox7.Location = new System.Drawing.Point(728, 55);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(60, 40);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -485,7 +487,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.White;
             this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Location = new System.Drawing.Point(804, 152);
+            this.pictureBox8.Location = new System.Drawing.Point(804, 55);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(60, 40);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -497,7 +499,7 @@ namespace WindowsApplication2
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.White;
             this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Location = new System.Drawing.Point(872, 152);
+            this.pictureBox9.Location = new System.Drawing.Point(872, 55);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(60, 40);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -508,9 +510,9 @@ namespace WindowsApplication2
             // picSpeech1
             // 
             this.picSpeech1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSpeech1.Location = new System.Drawing.Point(104, 37);
+            this.picSpeech1.Location = new System.Drawing.Point(100, 47);
             this.picSpeech1.Name = "picSpeech1";
-            this.picSpeech1.Size = new System.Drawing.Size(360, 224);
+            this.picSpeech1.Size = new System.Drawing.Size(420, 240);
             this.picSpeech1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSpeech1.TabIndex = 18;
             this.picSpeech1.TabStop = false;
@@ -518,7 +520,7 @@ namespace WindowsApplication2
             // linkLabel1
             // 
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(832, 24);
+            this.linkLabel1.Location = new System.Drawing.Point(919, 15);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(112, 24);
             this.linkLabel1.TabIndex = 19;
@@ -528,7 +530,7 @@ namespace WindowsApplication2
             // 
             // checkBox1
             // 
-            this.checkBox1.Location = new System.Drawing.Point(532, 24);
+            this.checkBox1.Location = new System.Drawing.Point(13, 90);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(200, 16);
             this.checkBox1.TabIndex = 20;
@@ -536,7 +538,7 @@ namespace WindowsApplication2
             // 
             // chkShowNewsEvents
             // 
-            this.chkShowNewsEvents.Location = new System.Drawing.Point(253, 24);
+            this.chkShowNewsEvents.Location = new System.Drawing.Point(13, 46);
             this.chkShowNewsEvents.Name = "chkShowNewsEvents";
             this.chkShowNewsEvents.Size = new System.Drawing.Size(136, 16);
             this.chkShowNewsEvents.TabIndex = 21;
@@ -547,9 +549,9 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate1.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate1.Location = new System.Drawing.Point(112, 192);
+            this.lblSpeechDate1.Location = new System.Drawing.Point(120, 102);
             this.lblSpeechDate1.Name = "lblSpeechDate1";
-            this.lblSpeechDate1.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate1.Size = new System.Drawing.Size(64, 16);
             this.lblSpeechDate1.TabIndex = 22;
             this.lblSpeechDate1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -557,9 +559,9 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate2.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate2.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate2.Location = new System.Drawing.Point(176, 192);
+            this.lblSpeechDate2.Location = new System.Drawing.Point(184, 102);
             this.lblSpeechDate2.Name = "lblSpeechDate2";
-            this.lblSpeechDate2.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate2.Size = new System.Drawing.Size(64, 16);
             this.lblSpeechDate2.TabIndex = 23;
             this.lblSpeechDate2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -567,9 +569,9 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate3.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate3.Location = new System.Drawing.Point(240, 192);
+            this.lblSpeechDate3.Location = new System.Drawing.Point(248, 102);
             this.lblSpeechDate3.Name = "lblSpeechDate3";
-            this.lblSpeechDate3.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate3.Size = new System.Drawing.Size(64, 16);
             this.lblSpeechDate3.TabIndex = 24;
             this.lblSpeechDate3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -577,7 +579,7 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate4.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate4.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate4.Location = new System.Drawing.Point(312, 192);
+            this.lblSpeechDate4.Location = new System.Drawing.Point(312, 102);
             this.lblSpeechDate4.Name = "lblSpeechDate4";
             this.lblSpeechDate4.Size = new System.Drawing.Size(64, 16);
             this.lblSpeechDate4.TabIndex = 25;
@@ -587,9 +589,9 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate5.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate5.Location = new System.Drawing.Point(418, 192);
+            this.lblSpeechDate5.Location = new System.Drawing.Point(378, 102);
             this.lblSpeechDate5.Name = "lblSpeechDate5";
-            this.lblSpeechDate5.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate5.Size = new System.Drawing.Size(62, 16);
             this.lblSpeechDate5.TabIndex = 26;
             this.lblSpeechDate5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -597,9 +599,9 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate6.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate6.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate6.Location = new System.Drawing.Point(592, 192);
+            this.lblSpeechDate6.Location = new System.Drawing.Point(486, 102);
             this.lblSpeechDate6.Name = "lblSpeechDate6";
-            this.lblSpeechDate6.Size = new System.Drawing.Size(72, 16);
+            this.lblSpeechDate6.Size = new System.Drawing.Size(62, 16);
             this.lblSpeechDate6.TabIndex = 27;
             this.lblSpeechDate6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -607,7 +609,7 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate7.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate7.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate7.Location = new System.Drawing.Point(720, 192);
+            this.lblSpeechDate7.Location = new System.Drawing.Point(720, 102);
             this.lblSpeechDate7.Name = "lblSpeechDate7";
             this.lblSpeechDate7.Size = new System.Drawing.Size(72, 16);
             this.lblSpeechDate7.TabIndex = 28;
@@ -617,7 +619,7 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate8.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate8.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate8.Location = new System.Drawing.Point(796, 192);
+            this.lblSpeechDate8.Location = new System.Drawing.Point(796, 102);
             this.lblSpeechDate8.Name = "lblSpeechDate8";
             this.lblSpeechDate8.Size = new System.Drawing.Size(72, 16);
             this.lblSpeechDate8.TabIndex = 29;
@@ -627,7 +629,7 @@ namespace WindowsApplication2
             // 
             this.lblSpeechDate9.BackColor = System.Drawing.Color.White;
             this.lblSpeechDate9.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSpeechDate9.Location = new System.Drawing.Point(872, 192);
+            this.lblSpeechDate9.Location = new System.Drawing.Point(872, 102);
             this.lblSpeechDate9.Name = "lblSpeechDate9";
             this.lblSpeechDate9.Size = new System.Drawing.Size(64, 16);
             this.lblSpeechDate9.TabIndex = 30;
@@ -635,7 +637,7 @@ namespace WindowsApplication2
             // 
             // chkShowMinMax
             // 
-            this.chkShowMinMax.Location = new System.Drawing.Point(410, 24);
+            this.chkShowMinMax.Location = new System.Drawing.Point(13, 68);
             this.chkShowMinMax.Name = "chkShowMinMax";
             this.chkShowMinMax.Size = new System.Drawing.Size(136, 16);
             this.chkShowMinMax.TabIndex = 34;
@@ -648,9 +650,9 @@ namespace WindowsApplication2
             this.groupBox5.Controls.Add(this.checkBox1);
             this.groupBox5.Controls.Add(this.chkShowNewsEvents);
             this.groupBox5.Controls.Add(this.chkShowMinMax);
-            this.groupBox5.Location = new System.Drawing.Point(48, 77);
+            this.groupBox5.Location = new System.Drawing.Point(1155, 118);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(952, 51);
+            this.groupBox5.Size = new System.Drawing.Size(207, 138);
             this.groupBox5.TabIndex = 35;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chart Options";
@@ -667,7 +669,7 @@ namespace WindowsApplication2
             // 
             // picEventBearStearns
             // 
-            this.picEventBearStearns.Location = new System.Drawing.Point(360, 328);
+            this.picEventBearStearns.Location = new System.Drawing.Point(360, 170);
             this.picEventBearStearns.Name = "picEventBearStearns";
             this.picEventBearStearns.Size = new System.Drawing.Size(80, 32);
             this.picEventBearStearns.TabIndex = 36;
@@ -679,9 +681,9 @@ namespace WindowsApplication2
             this.grpSpeech.Controls.Add(this.picSpeech2);
             this.grpSpeech.Controls.Add(this.picSpeech1);
             this.grpSpeech.Controls.Add(this.linkLabel1);
-            this.grpSpeech.Location = new System.Drawing.Point(48, 431);
+            this.grpSpeech.Location = new System.Drawing.Point(63, 416);
             this.grpSpeech.Name = "grpSpeech";
-            this.grpSpeech.Size = new System.Drawing.Size(952, 272);
+            this.grpSpeech.Size = new System.Drawing.Size(1059, 304);
             this.grpSpeech.TabIndex = 38;
             this.grpSpeech.TabStop = false;
             this.grpSpeech.Text = "Federal Reserve Speeches";
@@ -700,16 +702,16 @@ namespace WindowsApplication2
             // picSpeech2
             // 
             this.picSpeech2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picSpeech2.Location = new System.Drawing.Point(480, 37);
+            this.picSpeech2.Location = new System.Drawing.Point(570, 47);
             this.picSpeech2.Name = "picSpeech2";
-            this.picSpeech2.Size = new System.Drawing.Size(344, 224);
+            this.picSpeech2.Size = new System.Drawing.Size(420, 240);
             this.picSpeech2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSpeech2.TabIndex = 20;
             this.picSpeech2.TabStop = false;
             // 
             // picEventFannieFreddie
             // 
-            this.picEventFannieFreddie.Location = new System.Drawing.Point(632, 224);
+            this.picEventFannieFreddie.Location = new System.Drawing.Point(633, 146);
             this.picEventFannieFreddie.Name = "picEventFannieFreddie";
             this.picEventFannieFreddie.Size = new System.Drawing.Size(80, 56);
             this.picEventFannieFreddie.TabIndex = 39;
@@ -717,7 +719,7 @@ namespace WindowsApplication2
             // 
             // picEventLehmanBros
             // 
-            this.picEventLehmanBros.Location = new System.Drawing.Point(728, 224);
+            this.picEventLehmanBros.Location = new System.Drawing.Point(728, 164);
             this.picEventLehmanBros.Name = "picEventLehmanBros";
             this.picEventLehmanBros.Size = new System.Drawing.Size(96, 32);
             this.picEventLehmanBros.TabIndex = 40;
@@ -725,17 +727,28 @@ namespace WindowsApplication2
             // 
             // picEventAIG
             // 
-            this.picEventAIG.Location = new System.Drawing.Point(832, 232);
+            this.picEventAIG.Location = new System.Drawing.Point(830, 164);
             this.picEventAIG.Name = "picEventAIG";
             this.picEventAIG.Size = new System.Drawing.Size(72, 40);
             this.picEventAIG.TabIndex = 41;
             this.picEventAIG.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(60, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(362, 16);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "Stock Market and Financial Crisis Events 2007-2009";
+            // 
             // Form1
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1024, 710);
+            this.ClientSize = new System.Drawing.Size(1424, 741);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.picEventAIG);
             this.Controls.Add(this.picEventLehmanBros);
             this.Controls.Add(this.picEventFannieFreddie);
@@ -762,6 +775,7 @@ namespace WindowsApplication2
             this.Controls.Add(this.pictureBox9);
             this.Controls.Add(this.lblSpeechDate8);
             this.Controls.Add(this.lblSpeechDate9);
+            this.MaximumSize = new System.Drawing.Size(1440, 780);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stock Market Visual Explorer - Financial Crisis of 2007-2008";
@@ -792,6 +806,7 @@ namespace WindowsApplication2
             ((System.ComponentModel.ISupportInitialize)(this.picEventLehmanBros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEventAIG)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
 		}
 		#endregion
@@ -806,8 +821,6 @@ namespace WindowsApplication2
 			Application.Run(new Form1());
 
 			// UpdateDrawing();
-
-
 
 		}
 
@@ -869,9 +882,6 @@ namespace WindowsApplication2
 			DrawStockChart();
 			DrawLegendKey();
 			setNewsEvents();
-
-            
-			
 		}
 
 		// Draw blank chart canvas
@@ -990,9 +1000,21 @@ namespace WindowsApplication2
 					DrawMinMaxLabels();
 				}
 
-				//adjust to coordinate system
-				// m_pAxisInterval = (m_ChartWidth / (m_StockData.GetUpperBound(0)+1));
-                m_pAxisInterval = 2;
+				// Adjust to coordinate system based on how data points we have
+                // Daily, Weekly, Monthly
+				 m_pAxisInterval = (m_ChartWidth / (m_StockData.GetUpperBound(0)+1));
+
+                 DrawXaxisLabels();
+
+                //m_pAxisInterval = 3;
+
+
+               // if (cboStockName.SelectedIndex == 1)
+               // {
+              //      m_pAxisInterval = m_pAxisInterval * 12;
+             //   }
+
+
 				int xLoc=m_offsetX+(m_pAxisInterval/2);
 
 				int valHigh, valClose, valOpen, valLow;
@@ -1201,50 +1223,52 @@ namespace WindowsApplication2
 				Pen aPen = new Pen(Color.Blue,1);
 				aPen.Color = Color.Black;
 
+                int yLabelStart = 20;
+
                 yTic = System.Convert.ToInt16((m_yAxisHeight) * (6000 - m_yMin) / (1.1 * (m_yMax - m_yMin)));
                 yTic = m_yAxisStart - yTic;
                 g.DrawLine(aPen, m_offsetX, yTic, m_offsetX + 5, yTic);
-                g.DrawString("6000", myFnt, new SolidBrush(Color.Black), 10, yTic - 7);
+                g.DrawString("6000", myFnt, new SolidBrush(Color.Black), yLabelStart, yTic - 7);
 
                 yTic = System.Convert.ToInt16((m_yAxisHeight) * (7000 - m_yMin) / (1.1 * (m_yMax - m_yMin)));
                 yTic = m_yAxisStart - yTic;
                 g.DrawLine(aPen, m_offsetX, yTic, m_offsetX + 5, yTic);
-                g.DrawString("7000", myFnt, new SolidBrush(Color.Black), 10, yTic - 7);
+                g.DrawString("7000", myFnt, new SolidBrush(Color.Black), yLabelStart, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(8000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("8000", myFnt, new SolidBrush(Color.Black),10,yTic-7);
+                g.DrawString("8000", myFnt, new SolidBrush(Color.Black), yLabelStart, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(9000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("9000", myFnt, new SolidBrush(Color.Black),10,yTic-7);
+                g.DrawString("9000", myFnt, new SolidBrush(Color.Black), yLabelStart, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(10000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("10000", myFnt, new SolidBrush(Color.Black),5,yTic-7);
+                g.DrawString("10000", myFnt, new SolidBrush(Color.Black), yLabelStart-5, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(11000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("11000", myFnt, new SolidBrush(Color.Black),5,yTic-7);
+                g.DrawString("11000", myFnt, new SolidBrush(Color.Black), yLabelStart-5, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(12000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("12000", myFnt, new SolidBrush(Color.Black),5,yTic-7);
+                g.DrawString("12000", myFnt, new SolidBrush(Color.Black), yLabelStart-5, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(13000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("13000", myFnt, new SolidBrush(Color.Black),5,yTic-7);
+                g.DrawString("13000", myFnt, new SolidBrush(Color.Black), yLabelStart-5, yTic - 7);
 
 				yTic=System.Convert.ToInt16((m_yAxisHeight)*(14000-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yTic = m_yAxisStart  - yTic;				
 				g.DrawLine(aPen,m_offsetX,yTic,m_offsetX+5,yTic);
-				g.DrawString("14000", myFnt, new SolidBrush(Color.Black),5,yTic-7);
+                g.DrawString("14000", myFnt, new SolidBrush(Color.Black), yLabelStart-5, yTic - 7);
 			}
 		}
 
@@ -1293,18 +1317,21 @@ namespace WindowsApplication2
 		{
 			using (Graphics g = this.CreateGraphics())
 			{			
-				Font myFnt = new Font("Verdana", 7);
+				Font myFnt = new Font("Verdana", 8,FontStyle.Bold);
 				int yMaxLabel;
 				Pen yPen = new Pen(Color.Gray,1);
 
 				yMaxLabel = System.Convert.ToInt16((m_yAxisHeight)*(m_yMax-m_yMin)/(1.1*(m_yMax-m_yMin)));
 				yMaxLabel = m_yAxisStart  - yMaxLabel;
-			
-				g.DrawLine(yPen,m_offsetX+100,yMaxLabel,m_offsetX+200,yMaxLabel);
-				g.DrawString(System.Convert.ToString( m_yMax), myFnt, new SolidBrush(Color.Black),200,yMaxLabel-12);
 
-				g.DrawLine(yPen,m_offsetX+700,m_yAxisStart,m_offsetX+800,m_yAxisStart);
-				g.DrawString(System.Convert.ToString( m_yMin), myFnt, new SolidBrush(Color.Black),750,m_yAxisStart-15);
+                
+                string strMax = "Max:  " + System.Convert.ToString( m_yMax);
+				g.DrawLine(yPen,m_offsetX+100,yMaxLabel,m_offsetX+220,yMaxLabel);
+                g.DrawString(strMax, myFnt, new SolidBrush(Color.Red), 180, yMaxLabel - 16);
+
+                string strMin = "Min:  " + System.Convert.ToString( m_yMin);
+				g.DrawLine(yPen,m_offsetX+800,m_yAxisStart,m_offsetX+930,m_yAxisStart);
+                g.DrawString(strMin, myFnt, new SolidBrush(Color.Red), 900, m_yAxisStart - 16);
 			}
 
 		}
@@ -1925,23 +1952,28 @@ namespace WindowsApplication2
 		private void rdbHighLow_CheckedChanged(object sender, System.EventArgs e)
 		{
 			Form1.ActiveForm.Refresh();
+            //UpdateDrawing();
 		}
 
 		private void rdbOHLC_CheckedChanged(object sender, System.EventArgs e)
 		{
-			Form1.ActiveForm.Refresh();
+			//Form1.ActiveForm.Refresh();
+            UpdateDrawing();
 		}
 
 		private void rdbCandlestick_CheckedChanged(object sender, System.EventArgs e)
 		{
-			Form1.ActiveForm.Refresh();
+	 	    Form1.ActiveForm.Refresh();
+            //UpdateDrawing();
 		}
 
 		private void rdbMyGlyph_CheckedChanged(object sender, System.EventArgs e)
 		{
-			Form1.ActiveForm.Refresh();
+			//Form1.ActiveForm.Refresh();
+            UpdateDrawing();
 		}
 
+        // Use chooses new stock index to plot
 		private void cboStockName_SelectedIndexChanged(object sender, System.EventArgs e)
 		{
 			UpdateDrawing();
