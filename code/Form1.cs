@@ -1344,7 +1344,7 @@ namespace WindowsApplication2
                         //strDate= myDate.ToString("MMM, yyyy");
                         strDate = myDate.ToString("yyyy");
 
-                        Font labelFnt = new Font("Verdana", 7, FontStyle.Bold);
+                        Font labelFnt = new Font("Verdana", 9, FontStyle.Bold);
                         g.DrawString(strDate, labelFnt, new SolidBrush(Color.Black), xLoc-3, m_yAxisStart + 64);
                     }
 					prevDate = myDate;
@@ -1367,11 +1367,11 @@ namespace WindowsApplication2
                 
                 string strMax = "Max:  " + System.Convert.ToString( m_yMax);
 				g.DrawLine(yPen,m_offsetX+100,yMaxLabel,m_offsetX+220,yMaxLabel);
-                g.DrawString(strMax, myFnt, new SolidBrush(Color.Red), 180, yMaxLabel - 16);
+                g.DrawString(strMax, myFnt, new SolidBrush(Color.Black), 180, yMaxLabel - 16);
 
                 string strMin = "Min:  " + System.Convert.ToString( m_yMin);
 				g.DrawLine(yPen,m_offsetX+800,m_yAxisStart,m_offsetX+930,m_yAxisStart);
-                g.DrawString(strMin, myFnt, new SolidBrush(Color.Red), 900, m_yAxisStart - 16);
+                g.DrawString(strMin, myFnt, new SolidBrush(Color.Black), 900, m_yAxisStart - 16);
 			}
 
 		}
@@ -1514,7 +1514,7 @@ namespace WindowsApplication2
 				m_NewsEvents = new NewsEvent[11];
 
 				// Bear Stearns
-				m_NewsEvents[1].ImageFile="bear_stearns.jpg";
+                m_NewsEvents[1].ImageFile = "event_bear_stearns.jpg";
 				m_NewsEvents[1].Title="";
 				m_NewsEvents[1].Link="";           
 
@@ -1524,7 +1524,7 @@ namespace WindowsApplication2
 				picEventBearStearns.Visible = true;
 				
 				// Fannie Mae Freddie Mac
-				m_NewsEvents[2].ImageFile="fannie_freddie.jpg";
+                m_NewsEvents[2].ImageFile = "event_fannie_freddie.jpg";
 				m_NewsEvents[2].Title="";
 				m_NewsEvents[2].Link="";           
 
@@ -1534,7 +1534,7 @@ namespace WindowsApplication2
 				picEventFannieFreddie.Visible = true;
 
 				// Lehman Brothers
-				m_NewsEvents[3].ImageFile="lehman_brothers.jpg";
+                m_NewsEvents[3].ImageFile = "event_lehman_brothers.jpg";
 				m_NewsEvents[3].Title="";
 				m_NewsEvents[3].Link="";           
 
@@ -1544,7 +1544,7 @@ namespace WindowsApplication2
 				picEventLehmanBros.Visible = true;
 
 				// AIG
-				m_NewsEvents[4].ImageFile="aig_logo.jpg";
+                m_NewsEvents[4].ImageFile = "event_aig_logo.jpg";
 				m_NewsEvents[4].Title="";
 				m_NewsEvents[4].Link="";           
 
@@ -1552,6 +1552,8 @@ namespace WindowsApplication2
 				picEventAIG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 				picEventAIG.Image = (Image) myImage;
 				picEventAIG.Visible = true;
+
+                // IndyMac Bank - placeholder
 			}
 			// Hide images
 			else
