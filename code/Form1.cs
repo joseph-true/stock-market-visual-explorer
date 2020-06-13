@@ -43,7 +43,7 @@
 // DOW http://finance.yahoo.com/echarts?s=%5EDJI#chart9:symbol=^dji;range=1m;indicator=volume;charttype=candlestick;crosshair=on;ohlcvalues=0;logscale=on;source=undefined
 // Federal Reserve speechs: https://www.federalreserve.gov/newsevents/speeches.htm
 //
-//Additional Files:		Stock data in CSV text files
+//Additional Files:		Stock data in CSV text files, plus image files in sub-dir content_files
 //
 // -------------------------------------------------
 //
@@ -79,6 +79,9 @@ namespace WindowsApplication2
 		ArrayList m_array8 = new ArrayList();
 
 		ArrayList m_FileNames = new ArrayList();
+
+        // Sub-directory for data and image files
+        string m_contentDir = "content_files";
 
 		// This struct will hold one day of stock price data
 		public struct StockInfo
@@ -937,9 +940,10 @@ namespace WindowsApplication2
 			int fileIndex;
 			string MyFileName = "";
 
-			fileIndex = cboStockName.SelectedIndex; 
+			fileIndex = cboStockName.SelectedIndex;
 
-			MyFileName = m_FileNames[fileIndex].ToString();
+            // Include sub-dir in path
+            MyFileName = m_contentDir + "\\" + m_FileNames[fileIndex].ToString();
 
 			FileStream aFile = new FileStream(MyFileName,FileMode.Open, FileAccess.Read);
 			StreamReader sr = new StreamReader(aFile);		
@@ -1416,9 +1420,11 @@ namespace WindowsApplication2
 		// =========================================
 		private void getFileList()
 		{
-			// Create a reference to the current directory.
-			DirectoryInfo di = new DirectoryInfo(Environment.CurrentDirectory);
-			// Create an array representing the files in the current directory.
+			// Create a reference to the content sub-directory
+            string tmpDir = Environment.CurrentDirectory + "//" + m_contentDir;
+            DirectoryInfo di = new DirectoryInfo(tmpDir);
+
+            // Create an array representing the files in the content sub-directory
 			FileInfo[] fi = di.GetFiles();
 
 			foreach (FileInfo fiTemp in fi)
@@ -1426,13 +1432,14 @@ namespace WindowsApplication2
 				int cmpVal =(fiTemp.Extension.CompareTo(".csv"));
 				if (cmpVal==0)
 				{
-					// Console.WriteLine(fiTemp.Name);
-					FileStream aFile = new FileStream(fiTemp.Name,FileMode.Open, FileAccess.Read);
+                    // Get local path to read title from first line
+                    string csvFileName = fiTemp.Directory.Name + "\\" + fiTemp.Name;
+                    FileStream aFile = new FileStream(csvFileName, FileMode.Open, FileAccess.Read);
 					StreamReader sr = new StreamReader(aFile);		
 			
 					string strLine;
 			
-					// First line is stock name
+					// First line is data name
 					strLine = sr.ReadLine();	// read one line
 
 					cboStockName.Items.Add(strLine);
@@ -1462,47 +1469,47 @@ namespace WindowsApplication2
 			// 1-word random order
 			// 1-word a-z order
 			// 2-word a-z order
-			m_FedSpeeches[1].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - November 8, 2007-1r.PNG";
-			m_FedSpeeches[2].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - January 17, 2008-1r.PNG";
-			m_FedSpeeches[3].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - February 14, 2008-1r.PNG";
-			m_FedSpeeches[4].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - February 27, 2008-1r.PNG";
-			m_FedSpeeches[5].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - April 3, 2008-1r.PNG";
-			m_FedSpeeches[6].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - July 15, 2008-1r.PNG";
-			m_FedSpeeches[7].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - September 24, 2008-1r.PNG";
-			m_FedSpeeches[8].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - October 20, 2008-1r.PNG";
-			m_FedSpeeches[9].ImageFile1 = "Federal Reserve Speech - Ben Bernanke - November 18, 2008-1r.PNG";
+            m_FedSpeeches[1].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 8, 2007-1r.PNG";
+            m_FedSpeeches[2].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - January 17, 2008-1r.PNG";
+            m_FedSpeeches[3].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 14, 2008-1r.PNG";
+            m_FedSpeeches[4].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 27, 2008-1r.PNG";
+            m_FedSpeeches[5].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - April 3, 2008-1r.PNG";
+            m_FedSpeeches[6].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - July 15, 2008-1r.PNG";
+            m_FedSpeeches[7].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - September 24, 2008-1r.PNG";
+            m_FedSpeeches[8].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - October 20, 2008-1r.PNG";
+            m_FedSpeeches[9].ImageFile1 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 18, 2008-1r.PNG";
 
-			m_FedSpeeches[1].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - November 8, 2007-1a.PNG";
-			m_FedSpeeches[2].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - January 17, 2008-1a.PNG";
-			m_FedSpeeches[3].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - February 14, 2008-1a.PNG";
-			m_FedSpeeches[4].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - February 27, 2008-1a.PNG";
-			m_FedSpeeches[5].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - April 3, 2008-1a.PNG";
-			m_FedSpeeches[6].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - July 15, 2008-1a.PNG";
-			m_FedSpeeches[7].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - September 24, 2008-1a.PNG";
-			m_FedSpeeches[8].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - October 20, 2008-1a.PNG";
-			m_FedSpeeches[9].ImageFile2 = "Federal Reserve Speech - Ben Bernanke - November 18, 2008-1a.PNG";
+            m_FedSpeeches[1].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 8, 2007-1a.PNG";
+            m_FedSpeeches[2].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - January 17, 2008-1a.PNG";
+            m_FedSpeeches[3].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 14, 2008-1a.PNG";
+            m_FedSpeeches[4].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 27, 2008-1a.PNG";
+            m_FedSpeeches[5].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - April 3, 2008-1a.PNG";
+            m_FedSpeeches[6].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - July 15, 2008-1a.PNG";
+            m_FedSpeeches[7].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - September 24, 2008-1a.PNG";
+            m_FedSpeeches[8].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - October 20, 2008-1a.PNG";
+            m_FedSpeeches[9].ImageFile2 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 18, 2008-1a.PNG";
 
-			m_FedSpeeches[1].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - November 8, 2007-2a.PNG";
-			m_FedSpeeches[2].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - January 17, 2008-2a.PNG";
-			m_FedSpeeches[3].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - February 14, 2008-2a.PNG";
-			m_FedSpeeches[4].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - February 27, 2008-2a.PNG";
-			m_FedSpeeches[5].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - April 3, 2008-2a.PNG";
-			m_FedSpeeches[6].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - July 15, 2008-2a.PNG";
-			m_FedSpeeches[7].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - September 24, 2008-2a.PNG";
-			m_FedSpeeches[8].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - October 20, 2008-2a.PNG";
-			m_FedSpeeches[9].ImageFile3 = "Federal Reserve Speech - Ben Bernanke - November 18, 2008-2a.PNG";
+            m_FedSpeeches[1].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 8, 2007-2a.PNG";
+            m_FedSpeeches[2].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - January 17, 2008-2a.PNG";
+            m_FedSpeeches[3].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 14, 2008-2a.PNG";
+            m_FedSpeeches[4].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - February 27, 2008-2a.PNG";
+            m_FedSpeeches[5].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - April 3, 2008-2a.PNG";
+            m_FedSpeeches[6].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - July 15, 2008-2a.PNG";
+            m_FedSpeeches[7].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - September 24, 2008-2a.PNG";
+            m_FedSpeeches[8].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - October 20, 2008-2a.PNG";
+            m_FedSpeeches[9].ImageFile3 = m_contentDir + "\\" + "Federal Reserve Speech - Ben Bernanke - November 18, 2008-2a.PNG";
 
 			// Assign thumbnail images
-			m_myImages[0]="test.png";	// placeholder
-			m_myImages[1]="thumbnail_November 8, 2007.PNG";	
-			m_myImages[2]="thumbnail_January 17, 2008.PNG";
-			m_myImages[3]="thumbnail_February 14, 2008.PNG";
-			m_myImages[4]="thumbnail_February 27, 2008.PNG";
-			m_myImages[5]="thumbnail_April 3, 2008.PNG";
-			m_myImages[6]="thumbnail_July 15, 2008.PNG";
-			m_myImages[7]="thumbnail_September 24, 2008.PNG";
-			m_myImages[8]="thumbnail_October 20, 2008.PNG";
-			m_myImages[9]="thumbnail_November 18, 2008.PNG";
+            m_myImages[0] = m_contentDir + "\\" + "test.png";	// placeholder
+            m_myImages[1] = m_contentDir + "\\" + "thumbnail_November 8, 2007.PNG";
+            m_myImages[2] = m_contentDir + "\\" + "thumbnail_January 17, 2008.PNG";
+            m_myImages[3] = m_contentDir + "\\" + "thumbnail_February 14, 2008.PNG";
+            m_myImages[4] = m_contentDir + "\\" + "thumbnail_February 27, 2008.PNG";
+            m_myImages[5] = m_contentDir + "\\" + "thumbnail_April 3, 2008.PNG";
+            m_myImages[6] = m_contentDir + "\\" + "thumbnail_July 15, 2008.PNG";
+            m_myImages[7] = m_contentDir + "\\" + "thumbnail_September 24, 2008.PNG";
+            m_myImages[8] = m_contentDir + "\\" + "thumbnail_October 20, 2008.PNG";
+            m_myImages[9] = m_contentDir + "\\" + "thumbnail_November 18, 2008.PNG";
 		}
 
 
@@ -1514,7 +1521,7 @@ namespace WindowsApplication2
 				m_NewsEvents = new NewsEvent[11];
 
 				// Bear Stearns
-                m_NewsEvents[1].ImageFile = "event_bear_stearns.jpg";
+                m_NewsEvents[1].ImageFile = m_contentDir + "\\" + "event_bear_stearns.jpg";
 				m_NewsEvents[1].Title="";
 				m_NewsEvents[1].Link="";           
 
@@ -1524,7 +1531,7 @@ namespace WindowsApplication2
 				picEventBearStearns.Visible = true;
 				
 				// Fannie Mae Freddie Mac
-                m_NewsEvents[2].ImageFile = "event_fannie_freddie.jpg";
+                m_NewsEvents[2].ImageFile = m_contentDir + "\\" + "event_fannie_freddie.jpg";
 				m_NewsEvents[2].Title="";
 				m_NewsEvents[2].Link="";           
 
@@ -1534,7 +1541,7 @@ namespace WindowsApplication2
 				picEventFannieFreddie.Visible = true;
 
 				// Lehman Brothers
-                m_NewsEvents[3].ImageFile = "event_lehman_brothers.jpg";
+                m_NewsEvents[3].ImageFile = m_contentDir + "\\" + "event_lehman_brothers.jpg";
 				m_NewsEvents[3].Title="";
 				m_NewsEvents[3].Link="";           
 
@@ -1544,7 +1551,7 @@ namespace WindowsApplication2
 				picEventLehmanBros.Visible = true;
 
 				// AIG
-                m_NewsEvents[4].ImageFile = "event_aig_logo.jpg";
+                m_NewsEvents[4].ImageFile = m_contentDir + "\\" + "event_aig_logo.jpg";
 				m_NewsEvents[4].Title="";
 				m_NewsEvents[4].Link="";           
 
@@ -1722,43 +1729,43 @@ namespace WindowsApplication2
 
 		private void DrawSpeechThumbnails()
 		{
-			string myFile = "test.png";
+			string myFile = m_contentDir + "\\" + "test.png";
 			Bitmap myImage = new Bitmap(myFile);
 
 			// Draw thumbnails
-			myFile = m_myImages[1];
+            myFile = m_myImages[1];
 			myImage = new Bitmap(myFile);
 			pictureBox1.Image = (Image) myImage;
 
-			myFile = m_myImages[2];
+            myFile = m_myImages[2];
 			myImage = new Bitmap(myFile);
 			pictureBox2.Image = (Image) myImage;
-	
-			myFile = m_myImages[3];
+
+            myFile = m_myImages[3];
 			myImage = new Bitmap(myFile);
 			pictureBox3.Image = (Image) myImage;
-	
-			myFile = m_myImages[4];
+
+            myFile = m_myImages[4];
 			myImage = new Bitmap(myFile);
 			pictureBox4.Image = (Image) myImage;
 
-			myFile = m_myImages[5];
+            myFile = m_myImages[5];
 			myImage = new Bitmap(myFile);
 			pictureBox5.Image = (Image) myImage;
 
-			myFile = m_myImages[6];
+            myFile = m_myImages[6];
 			myImage = new Bitmap(myFile);
 			pictureBox6.Image = (Image) myImage;
 
-			myFile = m_myImages[7];
+            myFile =  m_myImages[7];
 			myImage = new Bitmap(myFile);
 			pictureBox7.Image = (Image) myImage;
 
-			myFile = m_myImages[8];
+            myFile = m_myImages[8];
 			myImage = new Bitmap(myFile);
 			pictureBox8.Image = (Image) myImage;
 
-			myFile = m_myImages[9];
+            myFile = m_myImages[9];
 			myImage = new Bitmap(myFile);
 			pictureBox9.Image = (Image) myImage;
 		
@@ -2085,12 +2092,12 @@ namespace WindowsApplication2
 				case 1:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[1].ImageFile1;
+                    myFile = m_FedSpeeches[1].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[1].ImageFile3;
+                    myFile = m_FedSpeeches[1].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2098,12 +2105,12 @@ namespace WindowsApplication2
 				case 2:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[2].ImageFile1;
+                    myFile = m_FedSpeeches[2].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[2].ImageFile3;
+                    myFile =  m_FedSpeeches[2].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2111,12 +2118,12 @@ namespace WindowsApplication2
 				case 3:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[3].ImageFile1;
+                    myFile = m_FedSpeeches[3].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[3].ImageFile3;
+                    myFile = m_FedSpeeches[3].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2124,12 +2131,12 @@ namespace WindowsApplication2
 				case 4:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[4].ImageFile1;
+                    myFile = m_FedSpeeches[4].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[4].ImageFile3;
+                    myFile = m_FedSpeeches[4].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2137,12 +2144,12 @@ namespace WindowsApplication2
 				case 5:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[5].ImageFile1;
+                    myFile = m_FedSpeeches[5].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[5].ImageFile3;
+                    myFile = m_FedSpeeches[5].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2150,12 +2157,12 @@ namespace WindowsApplication2
 				case 6:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[6].ImageFile1;
+                    myFile = m_FedSpeeches[6].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[6].ImageFile3;
+                    myFile = m_FedSpeeches[6].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2163,12 +2170,12 @@ namespace WindowsApplication2
 				case 7:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[7].ImageFile1;
+                    myFile = m_FedSpeeches[7].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[7].ImageFile3;
+                    myFile = m_FedSpeeches[7].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2176,12 +2183,12 @@ namespace WindowsApplication2
 				case 8:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[8].ImageFile1;
+                    myFile = m_FedSpeeches[8].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[8].ImageFile3;
+                    myFile = m_FedSpeeches[8].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  
@@ -2189,12 +2196,12 @@ namespace WindowsApplication2
 				case 9:
 					picSpeech1.Image = null;
 
-					myFile = m_FedSpeeches[9].ImageFile1;
+                    myFile = m_FedSpeeches[9].ImageFile1;
 					myImage = new Bitmap(myFile);
 
 					picSpeech1.Image = (Image) myImage;
 
-					myFile = m_FedSpeeches[9].ImageFile3;
+                    myFile = m_FedSpeeches[9].ImageFile3;
 					myImage = new Bitmap(myFile);
 					picSpeech2.Image = (Image) myImage;
 					break;                  

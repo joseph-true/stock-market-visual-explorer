@@ -95,12 +95,146 @@
       <SubType>Form</SubType>
     </Compile>
     <Content Include="App.ico" />
+    <Content Include="content_files\event_aig_logo.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\event_bear_stearns.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\event_fannie_freddie.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\event_lehman_brothers.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - April 3, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - April 3, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - April 3, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 14, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 14, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 14, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 27, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 27, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - February 27, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - January 17, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - January 17, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - January 17, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - July 15, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - July 15, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - July 15, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 18, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 18, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 18, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 8, 2007-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 8, 2007-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - November 8, 2007-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - October 20, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - October 20, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - October 20, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - September 24, 2008-1a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - September 24, 2008-1r.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\Federal Reserve Speech - Ben Bernanke - September 24, 2008-2a.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\test.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_April 3, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_February 14, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_February 27, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_January 17, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_July 15, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_November 18, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_November 8, 2007.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_October 20, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="content_files\thumbnail_September 24, 2008.PNG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="content_files\DowJonesDataDaily.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content_files\DowJonesDataMonthly.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="content_files\DowJonesDataWeekly.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
