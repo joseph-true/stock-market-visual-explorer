@@ -344,56 +344,56 @@ namespace WindowsApplication2
             this.groupBox2.Controls.Add(this.rdoLine);
             this.groupBox2.Location = new System.Drawing.Point(1119, 267);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 263);
+            this.groupBox2.Size = new System.Drawing.Size(213, 244);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Line and Marker Type";
+            this.groupBox2.Text = "Stock Price Line and Marker Type";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // picCustomGlyph
             // 
-            this.picCustomGlyph.Location = new System.Drawing.Point(123, 203);
+            this.picCustomGlyph.Location = new System.Drawing.Point(118, 186);
             this.picCustomGlyph.Name = "picCustomGlyph";
-            this.picCustomGlyph.Size = new System.Drawing.Size(56, 45);
+            this.picCustomGlyph.Size = new System.Drawing.Size(61, 45);
             this.picCustomGlyph.TabIndex = 11;
             this.picCustomGlyph.TabStop = false;
             // 
             // picLegendCandlestick
             // 
-            this.picLegendCandlestick.Location = new System.Drawing.Point(123, 157);
+            this.picLegendCandlestick.Location = new System.Drawing.Point(118, 146);
             this.picLegendCandlestick.Name = "picLegendCandlestick";
-            this.picLegendCandlestick.Size = new System.Drawing.Size(56, 32);
+            this.picLegendCandlestick.Size = new System.Drawing.Size(61, 32);
             this.picLegendCandlestick.TabIndex = 10;
             this.picLegendCandlestick.TabStop = false;
             // 
             // picLegendOHLC
             // 
-            this.picLegendOHLC.Location = new System.Drawing.Point(123, 110);
+            this.picLegendOHLC.Location = new System.Drawing.Point(118, 104);
             this.picLegendOHLC.Name = "picLegendOHLC";
-            this.picLegendOHLC.Size = new System.Drawing.Size(56, 32);
+            this.picLegendOHLC.Size = new System.Drawing.Size(61, 32);
             this.picLegendOHLC.TabIndex = 9;
             this.picLegendOHLC.TabStop = false;
             // 
             // picLegendHighLow
             // 
-            this.picLegendHighLow.Location = new System.Drawing.Point(123, 62);
+            this.picLegendHighLow.Location = new System.Drawing.Point(118, 62);
             this.picLegendHighLow.Name = "picLegendHighLow";
-            this.picLegendHighLow.Size = new System.Drawing.Size(56, 32);
+            this.picLegendHighLow.Size = new System.Drawing.Size(61, 32);
             this.picLegendHighLow.TabIndex = 8;
             this.picLegendHighLow.TabStop = false;
             // 
             // picLegendLine
             // 
             this.picLegendLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picLegendLine.Location = new System.Drawing.Point(123, 29);
+            this.picLegendLine.Location = new System.Drawing.Point(118, 29);
             this.picLegendLine.Name = "picLegendLine";
-            this.picLegendLine.Size = new System.Drawing.Size(56, 19);
+            this.picLegendLine.Size = new System.Drawing.Size(61, 19);
             this.picLegendLine.TabIndex = 7;
             this.picLegendLine.TabStop = false;
             // 
             // rdbMyGlyph
             // 
-            this.rdbMyGlyph.Location = new System.Drawing.Point(16, 203);
+            this.rdbMyGlyph.Location = new System.Drawing.Point(16, 194);
             this.rdbMyGlyph.Name = "rdbMyGlyph";
             this.rdbMyGlyph.Size = new System.Drawing.Size(96, 24);
             this.rdbMyGlyph.TabIndex = 5;
@@ -402,7 +402,7 @@ namespace WindowsApplication2
             // 
             // rdbCandlestick
             // 
-            this.rdbCandlestick.Location = new System.Drawing.Point(16, 157);
+            this.rdbCandlestick.Location = new System.Drawing.Point(16, 154);
             this.rdbCandlestick.Name = "rdbCandlestick";
             this.rdbCandlestick.Size = new System.Drawing.Size(88, 24);
             this.rdbCandlestick.TabIndex = 2;
@@ -411,7 +411,7 @@ namespace WindowsApplication2
             // 
             // rdbOHLC
             // 
-            this.rdbOHLC.Location = new System.Drawing.Point(16, 102);
+            this.rdbOHLC.Location = new System.Drawing.Point(16, 104);
             this.rdbOHLC.Name = "rdbOHLC";
             this.rdbOHLC.Size = new System.Drawing.Size(90, 40);
             this.rdbOHLC.TabIndex = 1;
@@ -420,7 +420,7 @@ namespace WindowsApplication2
             // 
             // rdbHighLow
             // 
-            this.rdbHighLow.Location = new System.Drawing.Point(16, 62);
+            this.rdbHighLow.Location = new System.Drawing.Point(16, 64);
             this.rdbHighLow.Name = "rdbHighLow";
             this.rdbHighLow.Size = new System.Drawing.Size(96, 24);
             this.rdbHighLow.TabIndex = 0;
@@ -577,7 +577,7 @@ namespace WindowsApplication2
             // 
             // chkShowNewsEvents
             // 
-            this.chkShowNewsEvents.Location = new System.Drawing.Point(13, 46);
+            this.chkShowNewsEvents.Location = new System.Drawing.Point(13, 68);
             this.chkShowNewsEvents.Name = "chkShowNewsEvents";
             this.chkShowNewsEvents.Size = new System.Drawing.Size(136, 16);
             this.chkShowNewsEvents.TabIndex = 21;
@@ -676,11 +676,11 @@ namespace WindowsApplication2
             // 
             // chkShowMinMax
             // 
-            this.chkShowMinMax.Location = new System.Drawing.Point(13, 68);
+            this.chkShowMinMax.Location = new System.Drawing.Point(13, 24);
             this.chkShowMinMax.Name = "chkShowMinMax";
-            this.chkShowMinMax.Size = new System.Drawing.Size(136, 16);
+            this.chkShowMinMax.Size = new System.Drawing.Size(183, 16);
             this.chkShowMinMax.TabIndex = 34;
-            this.chkShowMinMax.Text = "Min and max";
+            this.chkShowMinMax.Text = "Stock Market Min and Max";
             this.chkShowMinMax.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // groupBox5
@@ -699,7 +699,7 @@ namespace WindowsApplication2
             // 
             // checkBox3
             // 
-            this.checkBox3.Location = new System.Drawing.Point(13, 24);
+            this.checkBox3.Location = new System.Drawing.Point(13, 46);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(183, 16);
             this.checkBox3.TabIndex = 35;
@@ -1905,15 +1905,14 @@ namespace WindowsApplication2
                 g.DrawLine(myPen, xLoc + 20, yStartLoc+4, xLoc + 30, yStartLoc+12);
 			}
 
-            // LEGEND - Draw High Low glyph
+            // LEGEND - Draw High-Low glyph
             // --------------------------
 			using (Graphics g = picLegendHighLow.CreateGraphics())
 			{
-				Pen myPen = new Pen(Color.Black,2);
-
-				xLoc = 4; 
-				valLow = 14;
-				valHigh = 4;
+				Pen myPen = new Pen(Color.Black,1);
+				valLow = 17;
+				valHigh = 5;
+                xLoc = 5;
 
                 // Up day
 				myPen.Color = Color.Green;
@@ -1921,14 +1920,14 @@ namespace WindowsApplication2
 
                 // Down day
 				myPen.Color = Color.Red;
-				g.DrawLine (myPen,xLoc+5,valLow+2,xLoc+5,valHigh+2);
+				g.DrawLine (myPen,xLoc+5,valLow+5,xLoc+5,valHigh+3);
 
                 // Up day
 				myPen.Color = Color.Green;
 				g.DrawLine (myPen,xLoc+10,valLow-2,xLoc+10,valHigh-2);
 			}
 
-            // LEGEND - Draw Open High Low Close (OHLC) glyph
+            // LEGEND - Draw Open,High,Low,Close (OHLC) glyph
             // --------------------------
 			using (Graphics g = picLegendOHLC.CreateGraphics())
 			{
