@@ -197,6 +197,7 @@ namespace WindowsApplication2
 		private System.Windows.Forms.PictureBox picEventAIG;
         private Label lblWordCloudTip;
         private Label lblTitle;
+        private PictureBox picCustomGlyph;
 		private int[] m_myEvents = new int[10];
 
 		public Form1()
@@ -239,6 +240,7 @@ namespace WindowsApplication2
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboStockName = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.picCustomGlyph = new System.Windows.Forms.PictureBox();
             this.picLegendCandlestick = new System.Windows.Forms.PictureBox();
             this.picLegendOHLC = new System.Windows.Forms.PictureBox();
             this.picLegendHighLow = new System.Windows.Forms.PictureBox();
@@ -284,6 +286,7 @@ namespace WindowsApplication2
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomGlyph)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendCandlestick)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendOHLC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendHighLow)).BeginInit();
@@ -329,6 +332,7 @@ namespace WindowsApplication2
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.picCustomGlyph);
             this.groupBox2.Controls.Add(this.picLegendCandlestick);
             this.groupBox2.Controls.Add(this.picLegendOHLC);
             this.groupBox2.Controls.Add(this.picLegendHighLow);
@@ -340,48 +344,56 @@ namespace WindowsApplication2
             this.groupBox2.Controls.Add(this.rdoLine);
             this.groupBox2.Location = new System.Drawing.Point(1119, 267);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(213, 314);
+            this.groupBox2.Size = new System.Drawing.Size(213, 244);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Line and Marker Type";
+            this.groupBox2.Text = "Stock Price Line and Marker Type";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // picCustomGlyph
+            // 
+            this.picCustomGlyph.Location = new System.Drawing.Point(118, 186);
+            this.picCustomGlyph.Name = "picCustomGlyph";
+            this.picCustomGlyph.Size = new System.Drawing.Size(61, 45);
+            this.picCustomGlyph.TabIndex = 11;
+            this.picCustomGlyph.TabStop = false;
             // 
             // picLegendCandlestick
             // 
-            this.picLegendCandlestick.Location = new System.Drawing.Point(123, 157);
+            this.picLegendCandlestick.Location = new System.Drawing.Point(118, 146);
             this.picLegendCandlestick.Name = "picLegendCandlestick";
-            this.picLegendCandlestick.Size = new System.Drawing.Size(43, 32);
+            this.picLegendCandlestick.Size = new System.Drawing.Size(61, 32);
             this.picLegendCandlestick.TabIndex = 10;
             this.picLegendCandlestick.TabStop = false;
             // 
             // picLegendOHLC
             // 
-            this.picLegendOHLC.Location = new System.Drawing.Point(123, 110);
+            this.picLegendOHLC.Location = new System.Drawing.Point(118, 104);
             this.picLegendOHLC.Name = "picLegendOHLC";
-            this.picLegendOHLC.Size = new System.Drawing.Size(43, 32);
+            this.picLegendOHLC.Size = new System.Drawing.Size(61, 32);
             this.picLegendOHLC.TabIndex = 9;
             this.picLegendOHLC.TabStop = false;
             // 
             // picLegendHighLow
             // 
-            this.picLegendHighLow.Location = new System.Drawing.Point(123, 62);
+            this.picLegendHighLow.Location = new System.Drawing.Point(118, 62);
             this.picLegendHighLow.Name = "picLegendHighLow";
-            this.picLegendHighLow.Size = new System.Drawing.Size(43, 32);
+            this.picLegendHighLow.Size = new System.Drawing.Size(61, 32);
             this.picLegendHighLow.TabIndex = 8;
             this.picLegendHighLow.TabStop = false;
             // 
             // picLegendLine
             // 
             this.picLegendLine.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picLegendLine.Location = new System.Drawing.Point(123, 29);
+            this.picLegendLine.Location = new System.Drawing.Point(118, 29);
             this.picLegendLine.Name = "picLegendLine";
-            this.picLegendLine.Size = new System.Drawing.Size(43, 19);
+            this.picLegendLine.Size = new System.Drawing.Size(61, 19);
             this.picLegendLine.TabIndex = 7;
             this.picLegendLine.TabStop = false;
             // 
             // rdbMyGlyph
             // 
-            this.rdbMyGlyph.Location = new System.Drawing.Point(16, 203);
+            this.rdbMyGlyph.Location = new System.Drawing.Point(16, 194);
             this.rdbMyGlyph.Name = "rdbMyGlyph";
             this.rdbMyGlyph.Size = new System.Drawing.Size(96, 24);
             this.rdbMyGlyph.TabIndex = 5;
@@ -390,7 +402,7 @@ namespace WindowsApplication2
             // 
             // rdbCandlestick
             // 
-            this.rdbCandlestick.Location = new System.Drawing.Point(16, 157);
+            this.rdbCandlestick.Location = new System.Drawing.Point(16, 154);
             this.rdbCandlestick.Name = "rdbCandlestick";
             this.rdbCandlestick.Size = new System.Drawing.Size(88, 24);
             this.rdbCandlestick.TabIndex = 2;
@@ -399,7 +411,7 @@ namespace WindowsApplication2
             // 
             // rdbOHLC
             // 
-            this.rdbOHLC.Location = new System.Drawing.Point(16, 102);
+            this.rdbOHLC.Location = new System.Drawing.Point(16, 104);
             this.rdbOHLC.Name = "rdbOHLC";
             this.rdbOHLC.Size = new System.Drawing.Size(90, 40);
             this.rdbOHLC.TabIndex = 1;
@@ -408,7 +420,7 @@ namespace WindowsApplication2
             // 
             // rdbHighLow
             // 
-            this.rdbHighLow.Location = new System.Drawing.Point(16, 62);
+            this.rdbHighLow.Location = new System.Drawing.Point(16, 64);
             this.rdbHighLow.Name = "rdbHighLow";
             this.rdbHighLow.Size = new System.Drawing.Size(96, 24);
             this.rdbHighLow.TabIndex = 0;
@@ -565,7 +577,7 @@ namespace WindowsApplication2
             // 
             // chkShowNewsEvents
             // 
-            this.chkShowNewsEvents.Location = new System.Drawing.Point(13, 46);
+            this.chkShowNewsEvents.Location = new System.Drawing.Point(13, 68);
             this.chkShowNewsEvents.Name = "chkShowNewsEvents";
             this.chkShowNewsEvents.Size = new System.Drawing.Size(136, 16);
             this.chkShowNewsEvents.TabIndex = 21;
@@ -664,11 +676,11 @@ namespace WindowsApplication2
             // 
             // chkShowMinMax
             // 
-            this.chkShowMinMax.Location = new System.Drawing.Point(13, 68);
+            this.chkShowMinMax.Location = new System.Drawing.Point(13, 24);
             this.chkShowMinMax.Name = "chkShowMinMax";
-            this.chkShowMinMax.Size = new System.Drawing.Size(136, 16);
+            this.chkShowMinMax.Size = new System.Drawing.Size(183, 16);
             this.chkShowMinMax.TabIndex = 34;
-            this.chkShowMinMax.Text = "Min and max";
+            this.chkShowMinMax.Text = "Stock Market Min and Max";
             this.chkShowMinMax.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // groupBox5
@@ -687,7 +699,7 @@ namespace WindowsApplication2
             // 
             // checkBox3
             // 
-            this.checkBox3.Location = new System.Drawing.Point(13, 24);
+            this.checkBox3.Location = new System.Drawing.Point(13, 46);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(183, 16);
             this.checkBox3.TabIndex = 35;
@@ -810,6 +822,7 @@ namespace WindowsApplication2
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picCustomGlyph)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendCandlestick)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendOHLC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picLegendHighLow)).EndInit();
@@ -1222,7 +1235,7 @@ namespace WindowsApplication2
 								}
 							}
 
-							// Draw new glyph
+							// Draw custom glyph
 							// ------------------------
 							if (rdbMyGlyph.Checked)
 							{
@@ -1869,13 +1882,10 @@ namespace WindowsApplication2
 			drawLineToEvent(m_speechID);
 		}
 
-		// Draw sample of each glyph
+		// STOCK GLYPH LEGEND - Draw sample of each glyph
 		//=============================
 		private void DrawLegendKey()
 		{
-			//picLegendOHLC
-			//picLegendCandlestick
-
 			int valHigh, valClose, valOpen, valLow;
 			valOpen = 4;						
 			valClose = 8;				
@@ -1884,89 +1894,84 @@ namespace WindowsApplication2
 
 			int yStartLoc = 2;
 			int xLoc = 4;
-			// int yLoc = 10;
 
+            // LEGEND - Draw line chart
+            // --------------------------
 			using (Graphics g = picLegendLine.CreateGraphics())
 			{
-				Pen myPen = new Pen(Color.Black,1);
-				Color myColor;
-
-				myColor = Color.Green;
-				myColor = Color.Red;
-				myColor = Color.Black;
-				
-				// Draw line
-				// --------------------------
+				Pen myPen = new Pen(Color.Blue,1);
 				g.DrawLine (myPen,xLoc,yStartLoc,xLoc+10,yStartLoc+8);
 				g.DrawLine (myPen,xLoc+10,yStartLoc+8,xLoc+20,yStartLoc+4);
                 g.DrawLine(myPen, xLoc + 20, yStartLoc+4, xLoc + 30, yStartLoc+12);
 			}
 
+            // LEGEND - Draw High-Low glyph
+            // --------------------------
 			using (Graphics g = picLegendHighLow.CreateGraphics())
 			{
-				Pen myPen = new Pen(Color.Black,2);
-				Color myColor;
+				Pen myPen = new Pen(Color.Black,1);
+				valLow = 17;
+				valHigh = 5;
+                xLoc = 5;
 
-				myColor = Color.Green;
-				myColor = Color.Red;
-				myColor = Color.Black;
-
-				//int yStartLoc = rdbCandlestick.Location.Y + 50;
-				yStartLoc = 2;
-
-				valOpen = yStartLoc  - 2;						
-				valClose = yStartLoc  - 2;				
-				valHigh = yStartLoc  - 2;					
-				valLow = yStartLoc  - 2;
-
-				// Draw high low glyph
-				// --------------------------
-				xLoc = 4; 
-				valLow = 14;
-				valHigh = 4;
+                // Up day
 				myPen.Color = Color.Green;
 				g.DrawLine (myPen,xLoc,valLow,xLoc,valHigh);
+
+                // Down day
 				myPen.Color = Color.Red;
-				g.DrawLine (myPen,xLoc+5,valLow+2,xLoc+5,valHigh+2);
+				g.DrawLine (myPen,xLoc+5,valLow+5,xLoc+5,valHigh+3);
+
+                // Up day
 				myPen.Color = Color.Green;
 				g.DrawLine (myPen,xLoc+10,valLow-2,xLoc+10,valHigh-2);
 			}
 
-            // ==========================
-            valOpen = 5;
-            valClose = 12;
-            valHigh = 16;
-            valLow = 2;
-            xLoc = 10;
-          //  int yStartLoc = 2;
-            //int xLoc = 10;
-            // int yLoc = 10;
-
+            // LEGEND - Draw Open,High,Low,Close (OHLC) glyph
+            // --------------------------
 			using (Graphics g = picLegendOHLC.CreateGraphics())
 			{
 				Pen myPen = new Pen(Color.Red,1);
-				//myPen.Color = myColor;
-
-				// Draw open and close tick
-				g.DrawLine (myPen,xLoc-4,valOpen,xLoc,valOpen);
-				g.DrawLine (myPen,xLoc,valClose,xLoc+4,valClose);								
+				
+                // Draw Down day
+                valOpen = 11;
+                valClose = 18;
+                valHigh = 25;
+                valLow = 9;
+                xLoc = 10;
+                // Draw open and close tick
+				g.DrawLine (myPen,xLoc-3,valOpen,xLoc,valOpen);
+				g.DrawLine (myPen,xLoc,valClose,xLoc+3,valClose);								
 				// Draw high low line
 				g.DrawLine (myPen,xLoc,valLow,xLoc,valHigh);
 
+                // Draw Up day
+                valOpen = 15;
+                valClose = 7;
+                valHigh = 20;
+                valLow = 2;
+                xLoc = 20;
+                myPen.Color = Color.Green;
+
+                // Draw open and close tick
+                g.DrawLine(myPen, xLoc - 3, valOpen, xLoc, valOpen);
+                g.DrawLine(myPen, xLoc, valClose, xLoc + 3, valClose);
+                // Draw high low line
+                g.DrawLine(myPen, xLoc, valLow, xLoc, valHigh);
+
 			}
 
+            // LEGEND - Draw Candlestick glyph
+            // ------------------------
 			using (Graphics g = picLegendCandlestick.CreateGraphics())
 			{
-
-			// Draw Candlestick glyph
-			// ------------------------
 				Pen myPen = new Pen(Color.Black,1);
 				int candleWidth = 4;
 
                 // Draw a sample Down day
                 valOpen = 12;
                 valClose = 18;
-                valHigh = 22;
+                valHigh = 25;
                 valLow = 6;
                 xLoc = 10;
 
@@ -1977,14 +1982,11 @@ namespace WindowsApplication2
 				myPen.Color = Color.Red;
 				g.FillRectangle(new SolidBrush(Color.Red),xLoc-((candleWidth/2)),valOpen,candleWidth+1,valClose-valOpen);
 
-
 				// Draw a sample Up day
-                valOpen = 5;
-                valClose = 14;
-                valHigh = 18;
+                valOpen = 7;
+                valClose = 17;
+                valHigh = 22;
                 valLow = 2;
-
-
                 xLoc =20;
 
                 // Draw high low line
@@ -1992,18 +1994,48 @@ namespace WindowsApplication2
                 g.DrawLine(myPen, xLoc, valLow, xLoc, valHigh);
 
 				myPen.Color = Color.Black;
-				//g.FillRectangle(new SolidBrush(Color.Green),xLoc-2,valClose,candleWidth,valOpen-valClose);
                 g.FillRectangle(new SolidBrush(Color.Green), xLoc - ((candleWidth / 2)), valOpen, candleWidth + 1, valClose - valOpen);
-				//g.DrawRectangle(myPen,xLoc-(candleWidth/2),valClose,candleWidth,valOpen-valClose);
-
-
 			}
+
+            // LEGEND - Draw custom glyph
+            // ------------------------
+            using (Graphics g = picCustomGlyph.CreateGraphics())
+            {
+                Pen myPen = new Pen(Color.Black, 1);
+                // Draw a sample Down day
+                valOpen = 15;
+                valClose = 27;
+                valHigh = 39;
+                valLow = 9;
+                xLoc = 10;
+
+                // g.DrawEllipse (myPen,x,y,w,h);
+                g.DrawEllipse(myPen, xLoc - 3, valOpen - 3, 6, 6);
+                g.FillEllipse(new SolidBrush(Color.Red), xLoc - 4, valClose - 4, 8, 8);
+                g.DrawLine(myPen, xLoc - 2, valHigh, xLoc + 2, valHigh);
+                g.DrawLine(myPen, xLoc - 2, valLow, xLoc + 2, valLow);
+                g.DrawLine(myPen, xLoc, valLow, xLoc, valHigh);
+
+                // Draw a sample Up day
+                valOpen = 17;
+                valClose = 7;
+                valHigh = 27;
+                valLow = 2;
+                xLoc = 23;
+
+                g.DrawEllipse(myPen, xLoc - 3, valOpen - 3, 6, 6);
+                g.FillEllipse(new SolidBrush(Color.Green), xLoc - 4, valClose - 4, 8, 8);
+                g.DrawLine(myPen, xLoc - 2, valHigh, xLoc + 2, valHigh);
+                g.DrawLine(myPen, xLoc - 2, valLow, xLoc + 2, valLow);
+                g.DrawLine(myPen, xLoc, valLow, xLoc, valHigh);
+            }
 
             // Update each image
             picLegendLine.Update();
             picLegendHighLow.Update();
             picLegendOHLC.Update();
             picLegendCandlestick.Update();
+            picCustomGlyph.Update();
 		}
 
 		private void rdbHighLow_CheckedChanged(object sender, System.EventArgs e)
