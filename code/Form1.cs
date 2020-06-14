@@ -559,7 +559,7 @@ namespace WindowsApplication2
             // 
             this.checkBox1.Location = new System.Drawing.Point(13, 90);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(200, 16);
+            this.checkBox1.Size = new System.Drawing.Size(183, 16);
             this.checkBox1.TabIndex = 20;
             this.checkBox1.Text = "Federal Reserve interest rates";
             // 
@@ -689,7 +689,7 @@ namespace WindowsApplication2
             // 
             this.checkBox3.Location = new System.Drawing.Point(13, 24);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(192, 16);
+            this.checkBox3.Size = new System.Drawing.Size(183, 16);
             this.checkBox3.TabIndex = 35;
             this.checkBox3.Text = "Federal Reserve Speeches";
             this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged_1);
